@@ -1,0 +1,292 @@
+{
+  "name": "Pro Request to Booking",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "pro-request-to-booking",
+        "responseMode": "responseNode"
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.SUPABASE_URL}}/rest/v1/partners",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "is_active",
+              "value": "eq.true"
+            },
+            {
+              "name": "categories",
+              "value": "cs.{{{$json[\"body\"][\"category\"]}}}"
+            },
+            {
+              "name": "service_zips",
+              "value": "cs.{{{$json[\"body\"][\"zip\"]}}}"
+            },
+            {
+              "name": "order",
+              "value": "rating.desc,response_time_minutes.asc"
+            },
+            {
+              "name": "limit",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      "name": "Match Partners",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{$json.length}}",
+              "operation": "largerEqual",
+              "value2": 1
+            }
+          ]
+        }
+      },
+      "name": "Check Partners Found",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "name": "Split Partners",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 1,
+      "position": [850, 200]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.SUPABASE_URL}}/rest/v1/tasks",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "id",
+              "value": "eq.={{$json[\"$node\"][\"Webhook\"].json[\"body\"][\"task_id\"]}}"
+            }
+          ]
+        }
+      },
+      "name": "Get Task Details",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [1050, 200]
+    },
+    {
+      "parameters": {
+        "operation": "formatMessage",
+        "messageType": "text",
+        "text": "=🏠 New Job Opportunity from HoneyDo2Done\n\nCategory: {{$json[\"$node\"][\"Webhook\"].json[\"body\"][\"category\"]}}\nLocation: {{$json[\"$node\"][\"Webhook\"].json[\"body\"][\"zip\"]}}\n\nEstimate: ${{$json[\"$node\"][\"Webhook\"].json[\"body\"][\"estimate_range\"][\"low\"]}} - ${{$json[\"$node\"][\"Webhook\"].json[\"body\"][\"estimate_range\"][\"high\"]}}\n\nDetails: {{$json[\"$node\"][\"Get Task Details\"].json[0][\"description\"]}}\n\nReply \"ACCEPT {{$json[\"$node\"][\"Webhook\"].json[\"body\"][\"task_id\"]}}\" to take this job."
+      },
+      "name": "Format Job Brief",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [1250, 200]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.LINDY_API_URL}}/sms",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "to",
+              "value": "={{$json[\"phone\"]}}"
+            },
+            {
+              "name": "message",
+              "value": "={{$json[\"$node\"][\"Format Job Brief\"].json[\"message\"]}}"
+            }
+          ]
+        }
+      },
+      "name": "Send SMS to Partner",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [1450, 200]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.SUPABASE_URL}}/rest/v1/partner_requests",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "method": "PATCH",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "id",
+              "value": "eq.={{$json[\"$node\"][\"Webhook\"].json[\"body\"][\"partner_request_id\"]}}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "status",
+              "value": "sent"
+            },
+            {
+              "name": "sent_to_partner_ids",
+              "value": "={{$json[\"$node\"][\"Match Partners\"].json.map(p => p.id)}}"
+            }
+          ]
+        }
+      },
+      "name": "Update Partner Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [1650, 200]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"success\": true, \"partners_contacted\": $json[\"$node\"][\"Match Partners\"].json.length } }}"
+      },
+      "name": "Respond Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1850, 200]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"success\": false, \"error\": \"No partners available\" } }}",
+        "responseCode": 404
+      },
+      "name": "Respond No Partners",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [850, 400]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Match Partners",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Match Partners": {
+      "main": [
+        [
+          {
+            "node": "Check Partners Found",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Partners Found": {
+      "main": [
+        [
+          {
+            "node": "Split Partners",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond No Partners",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Partners": {
+      "main": [
+        [
+          {
+            "node": "Get Task Details",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Task Details": {
+      "main": [
+        [
+          {
+            "node": "Format Job Brief",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Job Brief": {
+      "main": [
+        [
+          {
+            "node": "Send SMS to Partner",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send SMS to Partner": {
+      "main": [
+        [
+          {
+            "node": "Update Partner Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Partner Request": {
+      "main": [
+        [
+          {
+            "node": "Respond Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {},
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-01-01T00:00:00.000Z",
+  "versionId": "1"
+}
