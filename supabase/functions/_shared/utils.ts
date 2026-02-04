@@ -209,27 +209,6 @@ export async function findOrCreateUserByPhone(
 }
 
 /**
- * Verify Lindy webhook signature
- */
-export function verifyLindySignature(
-  payload: string,
-  signature: string,
-  secret: string
-): boolean {
-  // Lindy webhook signature verification
-  // Implementation depends on Lindy's signature scheme
-  // For MVP, we can use a simple HMAC SHA-256
-
-  const encoder = new TextEncoder();
-  const data = encoder.encode(payload);
-  const key = encoder.encode(secret);
-
-  // This is a placeholder - actual implementation depends on Lindy's spec
-  // For now, just check if secret matches (weak but functional for MVP)
-  return signature === secret;
-}
-
-/**
  * Success response
  */
 export function successResponse<T>(data: T, status = 200): Response {
@@ -318,38 +297,23 @@ export async function triggerN8nWorkflow(
 }
 
 /**
- * Send SMS via Lindy
+ * Send notification via Python agent
+ *
+ * Python agent handles all SMS/voice communication via Twilio
  */
-export async function sendSMS(
-  to: string,
-  message: string
+export async function notifyUser(
+  taskId: string,
+  userId: string,
+  message: string,
+  channel: 'sms' | 'push' = 'push'
 ): Promise<void> {
-  const lindyApiKey = Deno.env.get('LINDY_API_KEY');
-  const lindyPhoneNumber = Deno.env.get('LINDY_PHONE_NUMBER');
+  // In MVP, notifications are handled by:
+  // 1. Python agent for SMS
+  // 2. Mobile app push notifications
+  // 3. Realtime database subscriptions
 
-  if (!lindyApiKey || !lindyPhoneNumber) {
-    console.warn('Lindy credentials not configured, skipping SMS');
-    return;
-  }
+  console.log(`[Notification] Task ${taskId}, User ${userId}, Channel: ${channel}`);
+  console.log(`Message: ${message}`);
 
-  try {
-    // Placeholder - actual Lindy API call
-    // Implementation depends on Lindy's API
-    console.log(`[SMS] To: ${to}, Message: ${message}`);
-
-    // await fetch('https://api.lindy.ai/v1/sms', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Authorization': `Bearer ${lindyApiKey}`,
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     from: lindyPhoneNumber,
-    //     to,
-    //     message,
-    //   }),
-    // });
-  } catch (error) {
-    console.error('Failed to send SMS:', error);
-  }
+  // Future: Call Python agent's notification endpoint or use push notification service
 }

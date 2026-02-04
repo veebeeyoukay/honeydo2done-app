@@ -277,12 +277,12 @@ export interface AIResponse<T = any> {
   confidence?: number;
 }
 
-// Lindy webhook payload
-export interface LindyWebhookPayload {
-  event: string;
+// Generic intake payload (from Python agent, app, etc.)
+export interface IntakePayload {
+  event: string; // voice_call, sms_message, app_submission
   phone_number: string;
   transcript: string;
-  extracted_data?: Record<string, any>;
+  metadata?: Record<string, any>;
   timestamp: string;
 }
 

@@ -1,4 +1,5 @@
-// Lindy Webhook - Voice/SMS intake endpoint
+// Generic Intake Webhook - Voice/SMS/App intake endpoint
+// Replaces Lindy-specific webhook with generic intake for Python agent
 
 import { createSupabaseClient } from '../_shared/supabase.ts';
 import {
@@ -10,11 +11,17 @@ import {
   errorResponse,
   corsResponse,
   triggerN8nWorkflow,
-  verifyLindySignature,
 } from '../_shared/utils.ts';
 import { extractStructuredData } from '../_shared/ai.ts';
 import { selectPersona } from '../_shared/persona.ts';
-import type { LindyWebhookPayload } from '../_shared/types.ts';
+
+interface IntakePayload {
+  event: string; // voice_call, sms_message, app_submission
+  phone_number: string;
+  transcript: string;
+  metadata?: Record<string, any>;
+  timestamp: string;
+}
 
 Deno.serve(async (req) => {
   // Handle CORS
@@ -27,21 +34,10 @@ Deno.serve(async (req) => {
   }
 
   try {
-    // Verify webhook signature
-    const signature = req.headers.get('x-lindy-signature') || '';
-    const webhookSecret = Deno.env.get('LINDY_WEBHOOK_SECRET') || '';
-
-    const body = await req.text();
-
-    if (webhookSecret && !verifyLindySignature(body, signature, webhookSecret)) {
-      console.warn('Invalid webhook signature');
-      return errorResponse('INVALID_SIGNATURE', 'Webhook signature verification failed', null, 401);
-    }
-
     // Parse payload
-    const payload: LindyWebhookPayload = JSON.parse(body);
+    const payload: IntakePayload = await req.json();
 
-    console.log('Lindy webhook received:', {
+    console.log('Intake webhook received:', {
       event: payload.event,
       phone: payload.phone_number,
     });
@@ -53,7 +49,7 @@ Deno.serve(async (req) => {
     const userId = await findOrCreateUserByPhone(
       supabase,
       payload.phone_number,
-      payload.extracted_data?.name
+      payload.metadata?.name
     );
 
     console.log('User resolved:', userId);
@@ -70,8 +66,8 @@ Deno.serve(async (req) => {
     }
 
     // Create task in 'captured' status
-    const taskTitle = payload.extracted_data?.title ||
-      `Task from ${payload.phone_number.slice(-4)} - ${new Date().toLocaleString()}`;
+    const taskTitle = payload.metadata?.title ||
+      generateTaskTitle(payload.transcript, payload.phone_number);
 
     const { data: task, error: taskError } = await supabase
       .from('tasks')
@@ -99,10 +95,9 @@ Deno.serve(async (req) => {
       task.id,
       'transcript',
       {
-        source: 'lindy',
-        event_type: payload.event,
+        source: payload.event,
         transcript: payload.transcript,
-        extracted_data: payload.extracted_data || {},
+        metadata: payload.metadata || {},
       }
     );
 
@@ -114,7 +109,8 @@ Deno.serve(async (req) => {
       'user',
       userId,
       {
-        source: 'lindy_webhook',
+        source: 'intake_webhook',
+        event: payload.event,
         phone: payload.phone_number,
       }
     );
@@ -175,7 +171,9 @@ Deno.serve(async (req) => {
 
     return successResponse({
       task_id: task.id,
-      status: 'captured',
+      user_id: userId,
+      title: taskTitle,
+      status: 'triaging',
       next_step: 'triage',
       message: 'Task captured successfully. Triage questions will be sent shortly.',
     });
@@ -190,3 +188,13 @@ Deno.serve(async (req) => {
     );
   }
 });
+
+function generateTaskTitle(transcript: string, phoneNumber: string): string {
+  // Extract first sentence or first 50 chars as title
+  const firstSentence = transcript.split(/[.!?]/)[0].trim();
+  const title = firstSentence.length > 0 && firstSentence.length <= 80
+    ? firstSentence
+    : transcript.substring(0, 50) + '...';
+
+  return title || `Task from ${phoneNumber.slice(-4)} - ${new Date().toLocaleString()}`;
+}

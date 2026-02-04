@@ -5,20 +5,21 @@ AI-powered relationship-aware task management and home services platform.
 ## Architecture
 
 - **Backend**: Supabase (PostgreSQL, Auth, Storage, Edge Functions)
-- **AI**: Claude (via Anthropic API)
-- **Voice/SMS**: Lindy integration
+- **AI**: Claude Opus 4.5 (via Anthropic API)
+- **Voice/SMS Agent**: Python + Twilio + Whisper
 - **Workflows**: n8n automation
-- **Mobile**: React Native (Expo)
-- **Voice-to-Text**: Whisper API
+- **iOS App**: Native SwiftUI
+- **Speech-to-Text**: OpenAI Whisper
 
 ## Project Structure
 
 ```
 ├── supabase/              # Supabase backend
 │   ├── migrations/        # Database migrations
-│   ├── functions/         # Edge functions
+│   ├── functions/         # Edge functions (6 endpoints)
 │   └── config.toml        # Supabase config
-├── mobile/                # React Native mobile app
+├── python-agent/          # Voice/SMS agent (FastAPI + Twilio)
+├── ios/                   # Native iOS app (SwiftUI)
 ├── n8n/                   # n8n workflow templates
 ├── docs/                  # Documentation
 └── scripts/               # Utility scripts
@@ -39,34 +40,43 @@ captured → triaging → awaiting_decision → [diy_in_progress | pro_requested
 
 ### Prerequisites
 - Node.js 18+
+- Python 3.11+
 - Supabase CLI
-- Expo CLI
+- Xcode 15+ (for iOS)
 - n8n instance
+- Twilio account
 
 ### Setup
 
-1. **Backend**
+1. **Backend (Supabase)**
 ```bash
 cd supabase
-supabase init
+supabase start
 supabase db reset
 ```
 
-2. **Mobile App**
+2. **Python Agent (Voice/SMS)**
 ```bash
-cd mobile
-npm install
-npm start
+cd python-agent
+pip install -r requirements.txt
+uvicorn main:app --reload
 ```
 
-3. **Environment Variables**
+3. **iOS App**
+```bash
+cd ios/HoneyDoApp
+open HoneyDoApp.xcodeproj
+# Press Cmd+R to run
+```
+
+4. **Environment Variables**
 See `.env.example` files in each directory.
 
 ## Development
 
 ### Phase 1: Backbone (Week 1)
 - ✓ Database schema
-- ✓ Lindy webhook
+- ✓ Python voice/SMS agent
 - ✓ Triage endpoints
 - ✓ n8n workflows
 
