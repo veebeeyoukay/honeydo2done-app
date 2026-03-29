@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Task Details - HoneyDo2Done</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f5a524",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#0D0D0D", // Requested #0D0D0D
+                        "card-dark": "#1A1A1A", // Requested #1A1A1A
+                        "status-teal": "#2dd4bf", // Soft teal green
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-6 py-3 bg-card-dark/50 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] font-display">HoneyDo2Done</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-white/70 hover:text-primary text-sm font-medium transition-colors" href="#">Dashboard</a>
+<a class="text-white text-sm font-medium" href="#">Tasks</a>
+<a class="text-white/70 hover:text-primary text-sm font-medium transition-colors" href="#">Calendar</a>
+<a class="text-white/70 hover:text-primary text-sm font-medium transition-colors" href="#">Household</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="flex flex-col min-w-40 !h-10 max-w-64 hidden sm:block">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-white/5 border border-white/10 hover:border-white/20 transition-all">
+<div class="text-white/40 flex items-center justify-center pl-4">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-white/30 px-2 text-sm font-normal leading-normal" placeholder="Search tasks..." value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border border-white/10 transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border border-white/10 transition-all">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-9 border-2 border-primary/20" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBx9qzPjNy-xH1CMQqYcfwZsr3ig7mXfLL0KjLTG41lr-EV4Lm9AYwE9bMlNXCVde-4H8LUDP7VA3hVdlX51sPrkMFO9oSHgxz2g9rYTsVubuFces79uoogdL_hD6LYzj6jsY--PyaB78qPtRwLXM6D-Um1C3hVgAYRejrSRF0W70sLCH8tzP9FxTyYxOiQ8f1jLHSFB6vy0IvW5EHucGUaTz5_p7RNe1eY88itWVo17w-aMByL8ve7FkwDSgRz2DjjtRs-U9av-4E");'></div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto pb-20">
+<div class="max-w-[1024px] mx-auto px-6 py-8">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 mb-6 text-sm">
+<a class="text-white/40 hover:text-primary transition-colors font-medium" href="#">Tasks</a>
+<span class="text-white/20">/</span>
+<a class="text-white/40 hover:text-primary transition-colors font-medium" href="#">Maintenance</a>
+<span class="text-white/20">/</span>
+<span class="text-white font-medium">Leaky Faucet</span>
+</div>
+<!-- Task Image/Hero Section -->
+<div class="group relative mb-8">
+<div class="bg-card-dark rounded-xl overflow-hidden border border-white/5 aspect-[21/9] flex items-center justify-center">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Close up of a chrome bathroom faucet dripping water" style='background-image: linear-gradient(0deg, rgba(13, 13, 13, 0.8) 0%, rgba(13, 13, 13, 0.2) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDXrPlLX8MrWjqU2WW95Njux9mmGLSvGGT2_hqgmQiGFCzff7XKn5J-O--wLcssB1G7saVP2DwYb8kVxvonXy0RZp5lLs96Xdf3vbKUgJ-yrdZ89z7WWr1W5MeV1LHw2n-oIo_kBbwi92Tvm6Lt4myuYZQ7o4tpIc44KGJTqBzRPqPaILl-YltYxhUVXL6FtLjVLoAqnBQDQuMYYU2BHez7hJU5bhprRqfYxDCdLxfNuVQSb2hOOOsKaQRCODw6CTowHnnFjXfw-v8");'></div>
+<div class="absolute bottom-0 left-0 p-8 w-full flex justify-between items-end">
+<div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-status-teal/20 text-status-teal mb-3 border border-status-teal/20">
+<span class="w-1.5 h-1.5 rounded-full bg-status-teal mr-1.5"></span>
+                                    In Progress
+                                </span>
+<h1 class="text-white text-3xl font-bold font-display tracking-tight">Fix the leaky faucet in the guest bath</h1>
+<p class="text-white/60 mt-1">Guest Bathroom, 2nd Floor</p>
+</div>
+<div class="flex gap-2">
+<button class="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-sm font-medium backdrop-blur-sm transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span> Update Photo
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left: Details & Activity Feed -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Details -->
+<div class="bg-card-dark rounded-xl p-8 border border-white/5 shadow-2xl">
+<h3 class="text-white text-lg font-semibold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">info</span>
+                                Task Details
+                            </h3>
+<p class="text-white/70 leading-relaxed mb-8">
+                                The cold water tap has been dripping constantly since Monday. Needs a new washer or ceramic cartridge. Check if we have the standard 1/2 inch replacement parts in the toolbox before heading to the store.
+                            </p>
+<!-- Action Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+<div class="bg-white/5 rounded-xl p-4 border border-white/5 flex flex-col items-center text-center group cursor-pointer hover:bg-white/10 transition-all">
+<div class="rounded-full bg-primary/20 p-3 mb-3 text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">event</span>
+</div>
+<p class="text-white/40 text-xs font-medium uppercase tracking-wider">Due Date</p>
+<p class="text-white text-sm font-semibold mt-1">Sat, Oct 12</p>
+</div>
+<div class="bg-white/5 rounded-xl p-4 border border-white/5 flex flex-col items-center text-center group cursor-pointer hover:bg-white/10 transition-all">
+<div class="rounded-full bg-status-teal/20 p-3 mb-3 text-status-teal group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">person</span>
+</div>
+<p class="text-white/40 text-xs font-medium uppercase tracking-wider">Assigned</p>
+<p class="text-white text-sm font-semibold mt-1">Alex</p>
+</div>
+<div class="bg-white/5 rounded-xl p-4 border border-white/5 flex flex-col items-center text-center group cursor-pointer hover:bg-white/10 transition-all">
+<div class="rounded-full bg-white/10 p-3 mb-3 text-white/70 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">label</span>
+</div>
+<p class="text-white/40 text-xs font-medium uppercase tracking-wider">Category</p>
+<p class="text-white text-sm font-semibold mt-1">Plumbing</p>
+</div>
+<div class="bg-white/5 rounded-xl p-4 border border-white/5 flex flex-col items-center text-center group cursor-pointer hover:bg-white/10 transition-all">
+<div class="rounded-full bg-white/10 p-3 mb-3 text-white/70 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">priority_high</span>
+</div>
+<p class="text-white/40 text-xs font-medium uppercase tracking-wider">Priority</p>
+<p class="text-white text-sm font-semibold mt-1">Medium</p>
+</div>
+</div>
+</div>
+<!-- Activity/Chat Feed -->
+<div class="bg-card-dark rounded-xl p-8 border border-white/5 shadow-2xl">
+<h3 class="text-white text-lg font-semibold mb-8 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">chat_bubble</span>
+                                Progress &amp; Chat
+                            </h3>
+<div class="space-y-6 mb-10">
+<!-- Message Left -->
+<div class="flex gap-4 items-start">
+<div class="bg-center bg-no-repeat rounded-full size-8 shrink-0 mt-1" data-alt="Sarah profile" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAdzGyBRj6Xly-ZB8kWJsBd-pVfiCIvnpfM7vbrZlEzL2YqdgVdCBuMKx-I4ZBWhuwOXwbEFpIaRVrMQGkaxYwZc_WzMh-DuhsaiWBRkOcop6_OEGVubR2WRarfYBcEVYNeWRc7ynpLimUp5omC6Dto2zS9SwXCBzulNf-2oLOY9QW2sWiJ1Bo8E6HTupUjbrf_HDT2ip29I_nHvHEK52F9yULmtN4KpM_VcNSx_0pPVnS7nFr1T2OHn_BBp-pymSw281qojSBZHJo");'></div>
+<div class="flex flex-col gap-1 max-w-[80%]">
+<div class="flex items-center gap-2">
+<span class="text-white font-semibold text-sm">Sarah</span>
+<span class="text-white/30 text-xs">Yesterday, 4:12 PM</span>
+</div>
+<div class="bg-white/5 p-4 rounded-xl rounded-tl-none border border-white/10">
+<p class="text-white/80 text-sm">The dripping is getting louder. Can we make sure to grab the parts this week?</p>
+</div>
+</div>
+</div>
+<!-- Message Right -->
+<div class="flex gap-4 items-start justify-end">
+<div class="flex flex-col gap-1 items-end max-w-[80%]">
+<div class="flex items-center gap-2">
+<span class="text-white/30 text-xs">10:45 AM</span>
+<span class="text-primary font-semibold text-sm">Alex (You)</span>
+</div>
+<div class="bg-primary/10 p-4 rounded-xl rounded-tr-none border border-primary/20">
+<p class="text-white/80 text-sm">Just ordered the ceramic cartridge from Amazon. Should be here by Friday evening!</p>
+</div>
+</div>
+<div class="bg-center bg-no-repeat rounded-full size-8 shrink-0 mt-1 border border-primary/40" data-alt="Alex profile" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBrBOdCgG_YD7TYBkutQof6DQxhbYdsiS4WWwT3rrP3pWlPjVUTe7JwWYyLSqZs-lX48VHnUgoAQcRmMbRhscKa5FrpSvNKPfBuDyQXEV-nIM-u6eVK0oRv_e0Nr6LBfRSZZrhqdcGXFESXN9xgTtCHQLvyFHmdodNl-vyCEgmLXxVrszIPcQYqE3nag3I9SumpKFBhJdt6ntNvOxJBy62BTC1J5eU2WgLqldGWsr8z4jXONaz2ndUGc4Bi8bd_NJ8dFb3SxG7vu4E");'></div>
+</div>
+<!-- Update Status -->
+<div class="flex justify-center py-2">
+<div class="bg-white/5 px-4 py-1.5 rounded-full border border-white/5">
+<p class="text-white/30 text-xs font-medium italic">Alex changed status to "Waiting for Parts"</p>
+</div>
+</div>
+<!-- Message Left -->
+<div class="flex gap-4 items-start">
+<div class="bg-center bg-no-repeat rounded-full size-8 shrink-0 mt-1" data-alt="Sarah profile" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCozzqCmeOXadoukEcERLaG7d8biivOFJT6TKKC8iDnbknXiyYsi2FtQYxbldBMtXNNnxKnhp0aaGTXY_rQOF9cz6H0wy6_P-bLzWkBW9Gs07G8yT74Plb6kFS22CXZgq7yKnVzynOnzCFC6mROJ9KSf-EkmE4mcIV1y0Oy0avpk1KXRo1Nd84cbxkVIxZRpx4IdeopwCiYTSBX_IZD6mWLTEFCirkcgLR6rZvXkHUJZ6MQHlPTX8fBL3VCwnu4NAQCQrxShidG958");'></div>
+<div class="flex flex-col gap-1 max-w-[80%]">
+<div class="flex items-center gap-2">
+<span class="text-white font-semibold text-sm">Sarah</span>
+<span class="text-white/30 text-xs">Just now</span>
+</div>
+<div class="bg-white/5 p-4 rounded-xl rounded-tl-none border border-white/10">
+<p class="text-white/80 text-sm">Perfect, I'll clear out the stuff under the sink so you have room to work on Saturday. 🛠️</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Comment Input -->
+<div class="flex gap-4 items-end bg-white/5 p-4 rounded-xl border border-white/10 group focus-within:border-primary/50 transition-all">
+<textarea class="w-full bg-transparent border-none focus:ring-0 text-white placeholder:text-white/20 resize-none h-10 py-1 scrollbar-hide text-sm" placeholder="Write a message or update..."></textarea>
+<div class="flex gap-2">
+<button class="text-white/40 hover:text-white transition-colors">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+<button class="bg-primary text-background-dark h-8 w-8 rounded-lg flex items-center justify-center hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Sidebar: Quick Actions & Related -->
+<div class="space-y-6">
+<div class="bg-card-dark rounded-xl p-6 border border-white/5">
+<h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-widest text-white/40">Quick Actions</h4>
+<div class="space-y-3">
+<button class="w-full bg-status-teal/10 hover:bg-status-teal/20 text-status-teal border border-status-teal/30 py-3 rounded-lg font-bold text-sm transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">check_circle</span>
+                                    Mark as Complete
+                                </button>
+<button class="w-full bg-white/5 hover:bg-white/10 text-white border border-white/10 py-3 rounded-lg font-semibold text-sm transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">edit</span>
+                                    Edit Task Details
+                                </button>
+<button class="w-full bg-white/5 hover:bg-white/10 text-white border border-white/10 py-3 rounded-lg font-semibold text-sm transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">share</span>
+                                    Share Update
+                                </button>
+<hr class="border-white/5 my-4"/>
+<button class="w-full text-red-400/70 hover:text-red-400 py-2 rounded-lg font-medium text-xs transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+                                    Remove Task
+                                </button>
+</div>
+</div>
+<div class="bg-card-dark rounded-xl p-6 border border-white/5">
+<h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-widest text-white/40">Supplies Needed</h4>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-sm text-white/70">
+<span class="material-symbols-outlined text-primary text-[20px]">shopping_cart</span>
+<span>Ceramic Cartridge (Ordered)</span>
+</li>
+<li class="flex items-center gap-3 text-sm text-white/70">
+<span class="material-symbols-outlined text-white/20 text-[20px]">check_box_outline_blank</span>
+<span>Plumber's Tape</span>
+</li>
+<li class="flex items-center gap-3 text-sm text-white/70">
+<span class="material-symbols-outlined text-white/20 text-[20px]">check_box_outline_blank</span>
+<span>Adjustable Wrench</span>
+</li>
+</ul>
+<button class="mt-4 text-primary text-xs font-semibold hover:underline">Add items to list</button>
+</div>
+<!-- Household Progress Card -->
+<div class="bg-primary/5 rounded-xl p-6 border border-primary/10">
+<div class="flex justify-between items-center mb-4">
+<h4 class="text-primary font-bold text-xs uppercase tracking-widest">Weekly Goal</h4>
+<span class="text-primary font-bold text-xs">65%</span>
+</div>
+<div class="w-full bg-primary/20 rounded-full h-2 mb-4">
+<div class="bg-primary h-2 rounded-full" style="width: 65%"></div>
+</div>
+<p class="text-white/50 text-xs leading-relaxed">You have 4 more tasks to finish to hit your goal for the week! Keep it up, Alex &amp; Sarah.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

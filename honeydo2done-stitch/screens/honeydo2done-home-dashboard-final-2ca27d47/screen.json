@@ -1,0 +1,30 @@
+{
+    "screenshot": {
+        "name": "projects/6015041271196470309/files/46f1bb2a5f524c5fb31b5f8dde0c7518",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uigpyMENF-Fq7t3NsewIH4jVQgexENgk2E7Yt9apHf1MKNaIAmBoPCqEjM9AJrQVlWtbFuMvFi2b4CrslbJyCYK6shT3biL4FBQSoRk1GuwGPFwSmU212N4uEBkh7b0N5y7FNA2SwoKM0vdQgT2IJA2Oahvvjk5_t6YMHhV_PnC9qpKPZJzpEk5SrMXIK_MaOXYJEAOdtH5aGhRtwWCOAQ82zTiOu29Q9KWsukUsnOMhy8qJ_LcLsIwPzY"
+    },
+    "htmlCode": {
+        "name": "projects/6015041271196470309/files/d5a46960c6d64e139a201cfcfd6f043a",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2YwYjc5ODVhZDk2NzRmN2M5M2U2ODczMjU3ZWQwOGM2EgsSBxCA3cuCnB8YAZIBIwoKcHJvamVjdF9pZBIVQhM2MDE1MDQxMjcxMTk2NDcwMzA5&filename=&opi=89354086"
+    },
+    "id": "2ca27d47606142efb31ab371da530bf8",
+    "generatedBy": "edit_agent",
+    "width": "2560",
+    "height": "2048",
+    "title": "HoneyDo2Done Home Dashboard Final",
+    "prompt": "Title: Home Dashboard with Bold Typography\nContext: Household task management app for couples called HoneyDo2Done with a modern, dark-themed aesthetic.\nEdit request: Update typography across all screens: Headings (e.g., 'Hey, Jen', 'What's going on?', 'What's making this yellow?') should use a bolder weight (Bold or Semi-Bold) for better hierarchy. Body text, labels, and descriptions should remain in a regular weight. Ensure all white and gray text maintain high accessibility contrast ratios against the deep charcoal (#0D0D0D) and dark gray (#1A1A1A) backgrounds.\nPlatform: web\nForm factor: desktop",
+    "name": "projects/6015041271196470309/screens/2ca27d47606142efb31ab371da530bf8",
+    "theme": {
+        "colorMode": "DARK",
+        "font": "INTER",
+        "roundness": "ROUND_EIGHT",
+        "customColor": "#f5a524",
+        "saturation": 3
+    },
+    "deviceType": "DESKTOP",
+    "screenType": "DESIGN",
+    "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+    }
+}

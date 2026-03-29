@@ -1,0 +1,30 @@
+{
+    "screenshot": {
+        "name": "projects/6015041271196470309/files/14fe4e14b100479eaa3583ae69e72d85",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uhVA2uJmUGUfPqpgLrY2CQZbp6zLe1nNpje8G-5K0bda4cvFiqq1VfvQNW0xs6qmpTrt6mi3xhK_kx1aaBscJWEjJcVDk0zX0YWkuPZJmTCsBn34dO9nhV-gwBXSLYVV99SrpdRy5Se1K1EvS5UndPk4_YlpGIIpxfjTa65vLC_WdFVZAFCoNiszxT0URjqoQjh080Shpkl70vlJ0CUx5Ze6eiU9SPI_Z8Uqzetj92G98TljDJfGVsMFYg"
+    },
+    "htmlCode": {
+        "name": "projects/6015041271196470309/files/83e2615308b04c5ba4b4179446acf7ea",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzdhNmE4ZGQ5NzI0NTQ1ODNiMmE0MjBiOTA0ODU0ZjI1EgsSBxCA3cuCnB8YAZIBIwoKcHJvamVjdF9pZBIVQhM2MDE1MDQxMjcxMTk2NDcwMzA5&filename=&opi=89354086"
+    },
+    "id": "d2e1a46d768140d2a762bc7600b1d480",
+    "generatedBy": "figaro_agent",
+    "width": "2560",
+    "height": "2048",
+    "title": "HoneyDo2Done Home Dashboard",
+    "prompt": "Title: HoneyDo2Done Home Dashboard\nContext: Household task management app for couples called HoneyDo2Done with a modern, dark-themed aesthetic.\nDescription of the screen: A home dashboard screen for HoneyDo2Done. The background is a deep charcoal black (#0D0D0D). At the top, a welcoming header says 'Good evening, Alex' in warm gray. Below that, a 'Today's Focus' card in dark gray (#1A1A1A) with a soft honey gold (#F5A623) border highlighting a single high-priority task. Below are categories like 'Your List' and 'Partner's Progress' shown as minimal cards with rounded corners. Each task card shows a status icon (teal green for done, coral red for urgent). The overall vibe is therapeutic and clean like Linear or How We Feel. Minimalist icons and generous whitespace throughout.\nPlatform: web\nForm factor: desktop",
+    "name": "projects/6015041271196470309/screens/d2e1a46d768140d2a762bc7600b1d480",
+    "theme": {
+        "colorMode": "DARK",
+        "font": "INTER",
+        "roundness": "ROUND_EIGHT",
+        "customColor": "#f5a524",
+        "saturation": 3
+    },
+    "deviceType": "DESKTOP",
+    "screenType": "DESIGN",
+    "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+    }
+}

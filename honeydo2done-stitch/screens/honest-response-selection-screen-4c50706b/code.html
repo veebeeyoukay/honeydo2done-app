@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Spacious Honest Response Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b4b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#0D0D0D",
+                        "card-dark": "#1A1A1A",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-custom-gradient {
+            background: radial-gradient(circle at center, rgba(238, 43, 75, 0.05) 0%, rgba(13, 13, 13, 1) 70%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen">
+<div class="relative flex h-full min-h-screen w-full flex-col bg-custom-gradient group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/5 px-6 md:px-40 py-4">
+<div class="flex items-center gap-4 text-white">
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-card-dark text-white hover:bg-primary/20 transition-colors border border-white/10">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex items-center gap-2">
+<div class="size-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-tight">HoneyDo2Done</h2>
+</div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-10 px-4">
+<div class="layout-content-container flex flex-col max-w-[560px] flex-1">
+<div class="mb-10 text-center">
+<h1 class="text-white tracking-tight text-[32px] font-bold leading-tight pb-2">Help us understand</h1>
+<p class="text-white/60 text-base font-normal leading-normal">No judgment — this helps us find the right solution</p>
+</div>
+<div class="flex flex-col gap-3 mt-3">
+<div class="flex items-center gap-4 bg-card-dark hover:bg-card-dark/80 p-4 rounded-xl border border-white/5 hover:border-primary/40 cursor-pointer transition-all group">
+<div class="text-white/70 group-hover:text-primary flex items-center justify-center rounded-lg bg-white/5 shrink-0 size-10 transition-colors">
+<span class="material-symbols-outlined">help_outline</span>
+</div>
+<p class="text-white text-base font-normal flex-1">I don't know where to start</p>
+<div class="shrink-0 text-white/30 group-hover:text-white/60 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-card-dark hover:bg-card-dark/80 p-4 rounded-xl border border-white/5 hover:border-primary/40 cursor-pointer transition-all group">
+<div class="text-white/70 group-hover:text-primary flex items-center justify-center rounded-lg bg-white/5 shrink-0 size-10 transition-colors">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<p class="text-white text-base font-normal flex-1">I don't have time for this</p>
+<div class="shrink-0 text-white/30 group-hover:text-white/60 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-card-dark hover:bg-card-dark/80 p-4 rounded-xl border border-white/5 hover:border-primary/40 cursor-pointer transition-all group">
+<div class="text-white/70 group-hover:text-primary flex items-center justify-center rounded-lg bg-white/5 shrink-0 size-10 transition-colors">
+<span class="material-symbols-outlined">warning_amber</span>
+</div>
+<p class="text-white text-base font-normal flex-1">This feels risky or scary</p>
+<div class="shrink-0 text-white/30 group-hover:text-white/60 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-card-dark hover:bg-card-dark/80 p-4 rounded-xl border border-white/5 hover:border-primary/40 cursor-pointer transition-all group">
+<div class="text-white/70 group-hover:text-primary flex items-center justify-center rounded-lg bg-white/5 shrink-0 size-10 transition-colors">
+<span class="material-symbols-outlined">badge</span>
+</div>
+<p class="text-white text-base font-normal flex-1">This needs a licensed professional</p>
+<div class="shrink-0 text-white/30 group-hover:text-white/60 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-card-dark hover:bg-card-dark/80 p-4 rounded-xl border border-white/5 hover:border-primary/40 cursor-pointer transition-all group">
+<div class="text-white/70 group-hover:text-primary flex items-center justify-center rounded-lg bg-white/5 shrink-0 size-10 transition-colors">
+<span class="material-symbols-outlined">sentiment_dissatisfied</span>
+</div>
+<p class="text-white text-base font-normal flex-1">I just don't want to</p>
+<div class="shrink-0 text-white/30 group-hover:text-white/60 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<button class="text-white/40 hover:text-white/70 text-sm font-medium transition-colors underline underline-offset-4">
+                            Skip for now, I'll figure it out later
+                        </button>
+</div>
+</div>
+</main>
+<div class="fixed bottom-0 left-0 w-full h-32 pointer-events-none bg-gradient-to-t from-background-dark to-transparent opacity-80"></div>
+</div>
+</div>
+
+</body></html>

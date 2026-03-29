@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tactile Emotion Drill-down: Frustrated</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#F5A623",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#0D0D0D",
+                        "card-dark": "#1A1A1A",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-coral-glow {
+            background: radial-gradient(circle at top center, rgba(255, 71, 71, 0.18) 0%, rgba(13, 13, 13, 0) 70%);
+        }.constellation-word {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }.depth-1 { filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4)); transform: translateZ(30px); }
+        .depth-2 { filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5)); transform: translateZ(50px); }
+        .depth-3 { filter: drop-shadow(0 15px 25px rgba(0,0,0,0.6)); transform: translateZ(80px); }
+        .constellation-word:hover {
+            transform: scale(1.1) translateZ(100px) !important;
+            filter: brightness(1.2) drop-shadow(0 20px 30px currentColor);
+        }
+        .glossy-finish {
+            background: linear-gradient(135deg, #F5A623 0%, #FFC15E 45%, #F5A623 50%, #D48806 100%);
+            box-shadow: inset 0 1px 1px rgba(255,255,255,0.4), 0 10px 20px rgba(245, 166, 35, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .glossy-finish::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 50%;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+            pointer-events: none;
+        }
+        .card-glow {
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 15px rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-white min-h-screen relative overflow-hidden selection:bg-primary selection:text-black">
+<div class="absolute inset-0 bg-coral-glow pointer-events-none"></div>
+<div class="relative z-10 flex flex-col h-screen">
+<header class="flex items-center justify-between px-8 py-6">
+<button class="flex items-center justify-center size-10 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors border border-white/10">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex items-center gap-2">
+<div class="size-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+</svg>
+</div>
+<span class="font-bold text-lg tracking-tight">HoneyDo2Done</span>
+</div>
+<div class="size-10"></div>
+</header>
+<main class="flex-1 relative flex items-center justify-center max-w-7xl mx-auto w-full px-10 pb-24" style="perspective: 1000px;">
+<div class="relative w-full h-full">
+<div class="constellation-word depth-3 absolute top-[22%] left-[42%] text-[#FF5F5F] text-[56px] font-black tracking-tighter leading-none">
+                    Frustrated
+                </div>
+<div class="constellation-word depth-2 absolute top-[8%] left-[26%] text-[#FF7070] text-[42px] font-extrabold tracking-tight opacity-95">
+                    Stressed
+                </div>
+<div class="constellation-word depth-2 absolute top-[44%] left-[16%] text-[#FF7575] text-[34px] font-bold opacity-85">
+                    Angry
+                </div>
+<div class="constellation-word depth-2 absolute top-[4%] left-[58%] text-[#FF8585] text-[36px] font-bold opacity-85">
+                    Overwhelmed
+                </div>
+<div class="constellation-word depth-1 absolute top-[50%] left-[65%] text-[#FFA0A0] text-[28px] font-semibold opacity-80">
+                    Anxious
+                </div>
+<div class="constellation-word depth-1 absolute top-[30%] left-[78%] text-[#FFBBBB] text-[22px] font-normal opacity-70">
+                    Irritated
+                </div>
+<div class="constellation-word depth-1 absolute top-[61%] left-[30%] text-[#FFCCCC] text-[20px] font-normal opacity-60">
+                    Annoyed
+                </div>
+<div class="constellation-word depth-1 absolute top-[58%] left-[50%] text-[#FFDADA] text-[18px] font-normal opacity-60">
+                    Worried
+                </div>
+</div>
+</main>
+<footer class="p-10 flex justify-center items-end mt-8 relative z-20">
+<div class="flex items-stretch gap-6 max-w-2xl w-full">
+<div class="flex-1 bg-card-dark rounded-full p-4 px-10 card-glow flex items-center justify-between">
+<div class="flex flex-col gap-[12px]">
+<h2 class="text-white text-3xl font-black tracking-widest leading-none uppercase">Frustrated</h2>
+<p class="text-gray-400 text-sm font-medium leading-relaxed max-w-[280px]">feeling upset because something isn't working as expected</p>
+</div>
+<div class="ml-4 w-16 h-12 bg-center bg-no-repeat bg-cover rounded-full ring-2 ring-white/5" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAPYiQeed1uCibScl32w693r9roh26kYlaoCM9r1Zg4DEX_kcXKur7hBC11AsrDCgVgRnxk3doGA77y8j6Mwl8n0dJLG3xjDcI5fDa-5rf_QAZpeD4o7buZtjlNQNgf4oYR-n68jYsq-20iNu2NfvjArriCHNUvG39FZqLum7iRPgBFhjtn4rBbYimpBxjzcwxUiAbyUH0gwqa-5nqwL5ahpkvhcfYKp3h-r1eiembdkI9Y4Sg3hsxyuGJCETNxWT29x4KDRYm_6q0");'>
+</div>
+</div>
+<button class="px-8 rounded-full glossy-finish flex items-center justify-center text-background-dark hover:scale-105 active:scale-95 transition-all duration-200 group">
+<span class="font-bold uppercase tracking-wider text-sm mr-2">Confirm</span>
+<span class="material-symbols-outlined text-2xl font-bold">arrow_forward</span>
+</button>
+</div>
+</footer>
+</div>
+<div class="absolute bottom-[-20px] right-[-20px] p-12 opacity-[0.03] pointer-events-none select-none">
+<span class="material-symbols-outlined text-[180px]">psychology</span>
+</div>
+
+</body></html>

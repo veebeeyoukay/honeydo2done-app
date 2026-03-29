@@ -1,0 +1,30 @@
+{
+    "screenshot": {
+        "name": "projects/6015041271196470309/files/eb4820ac0c994b35a4a6f8328db3610c",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uiA9kxEk1E2PbEcDBZyYddk2iu-pDF-qbEdJ-eh1AhtwpqpnQlLaujB9qG9QOdQf7sQLV2vOGhxKOt2hgaoDbAbXX_qzkPgTaZHmvBS5rhfUPyhhM5fRwhJ7-GOXSHKbjkbp-v-ylGThjv4VXpv-hZzdB2N2gWwkrIjHjJhry6dpWpPWbqbfUJOyMUR2tzL0Cy5GcXH3f-hP_ND3Ep1xy3Wm4Q9hDMGHQ6rsEvtDLV-FcSrFr19rKJcJ0k"
+    },
+    "htmlCode": {
+        "name": "projects/6015041271196470309/files/efa83064ab464ad1bb38764d7f585247",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzYxMzQ4NmY4ZmFiODRjNjg5YTA2MmY5MTJhYTBmNzUwEgsSBxCA3cuCnB8YAZIBIwoKcHJvamVjdF9pZBIVQhM2MDE1MDQxMjcxMTk2NDcwMzA5&filename=&opi=89354086"
+    },
+    "id": "6c70c525d5284c57bb4996ce047e0188",
+    "generatedBy": "figaro_agent",
+    "width": "2560",
+    "height": "2048",
+    "title": "Supportive Help Selection Screen",
+    "prompt": "Title: Supportive Help Selection Screen\nContext: Task clarification screen for the 'Doer' (fixer) in the HoneyDo2Done app, designed to facilitate non-judgmental communication when help is needed.\nDescription of the screen: A supportive 'holdup' selection screen with a deep charcoal background and a very subtle amber glow. At the top, a back arrow and the title 'What\\'s the holdup?' in white. The main content consists of three large, vertically stacked cards in dark gray (#1A1A1A) with 12px rounded corners and subtle borders. Card 1 (Diagnosis): A question mark icon, title 'I don\\'t know how to diagnose this', and subtitle 'Help me figure out what\\'s wrong'. Card 2 (Tools): A wrench icon, title 'I don\\'t have the right tools', and subtitle 'Help me find what I need'. Card 3 (Assistance): A two-people icon, title 'I need another pair of hands', and subtitle 'This is a two-person job'. The layout is spacious and feels supportive and collaborative, emphasizing the therapeutic and helpful nature of the app.\nPlatform: web\nForm factor: desktop",
+    "name": "projects/6015041271196470309/screens/6c70c525d5284c57bb4996ce047e0188",
+    "theme": {
+        "colorMode": "DARK",
+        "font": "INTER",
+        "roundness": "ROUND_TWELVE",
+        "customColor": "#eca413",
+        "saturation": 3
+    },
+    "deviceType": "DESKTOP",
+    "screenType": "DESIGN",
+    "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+    }
+}

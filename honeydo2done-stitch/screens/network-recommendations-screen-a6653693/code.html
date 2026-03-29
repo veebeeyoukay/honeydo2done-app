@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Network Recommendations Screen - HoneyDo2Done</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2bd0d",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#0D0D0D",
+                        "card-dark": "#1A1A1A",
+                        "muted-gray": "#9CA3AF"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white min-h-screen">
+<!-- Main Container -->
+<div class="flex flex-col min-h-screen items-center justify-center px-4 py-12">
+<!-- Top Navigation / Logo Placeholder -->
+<div class="fixed top-0 w-full flex justify-between items-center px-10 py-6">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">hive</span>
+</div>
+<h2 class="text-white text-lg font-bold tracking-tight">HoneyDo2Done</h2>
+</div>
+<button class="flex items-center justify-center rounded-full w-10 h-10 bg-card-dark border border-white/10 text-white">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+<div class="max-w-[600px] w-full flex flex-col items-center">
+<!-- Headline Section -->
+<div class="text-center mb-10">
+<h1 class="text-white text-4xl font-bold tracking-tight mb-3">Tap your network</h1>
+<p class="text-muted-gray text-lg">Your friends probably know someone great</p>
+</div>
+<!-- Pre-written Message Card -->
+<div class="w-full bg-card-dark rounded-xl border border-white/5 p-6 mb-10 relative group shadow-2xl">
+<div class="absolute top-4 right-4">
+<button class="text-primary hover:bg-primary/10 p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+<div class="flex items-start gap-4 mb-4">
+<div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">plumbing</span>
+</div>
+<div class="flex flex-col pr-8">
+<p class="text-white text-xl font-semibold leading-snug mb-2">
+                            Anyone know a good plumber?
+                        </p>
+<p class="text-muted-gray text-base leading-relaxed">
+                            We have a dripping faucet that needs professional help.
+                        </p>
+</div>
+</div>
+<div class="h-48 w-full bg-cover bg-center rounded-lg mt-4 opacity-80" data-alt="Modern bathroom with a metallic dripping faucet" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD_iQqPNaGkySw-2EFxphYjD2dwdzFz71ENbab3u0kSZYKD8QfEh3YhYt15J05uZLNq8goLfdfQPL_b2ZqkXDr1T2ZBqnX5df8oOP8q6r232_TjWhsrq89aXCbb-khE4IBfesgCiM2rqlYR4q0KtTNEmzndrqr_8E7KVHiQAtGgOwArr-DmlGlHKLd-IwnOgNp7Q5b_x2grmhodI6qm-3Z60Q6dJpKVw8uz1wFECqMOvzms9inWtFmNeKwwBHDy8GUFSI-R7KX9ygY');">
+</div>
+</div>
+<!-- Share Destination Grid -->
+<div class="w-full mb-12">
+<h3 class="text-white/60 text-sm font-semibold uppercase tracking-widest text-center mb-6">Share to your community</h3>
+<div class="grid grid-cols-2 gap-4">
+<!-- Text Message -->
+<button class="flex items-center gap-4 bg-card-dark border border-white/10 hover:border-primary/50 p-5 rounded-xl transition-all group">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-500/10 text-blue-400">
+<span class="material-symbols-outlined">chat</span>
+</div>
+<span class="text-white font-medium">Text Message</span>
+</button>
+<!-- Facebook -->
+<button class="flex items-center gap-4 bg-card-dark border border-white/10 hover:border-primary/50 p-5 rounded-xl transition-all group">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-[#1877F2]/10 text-[#1877F2]">
+<span class="material-symbols-outlined">share</span>
+</div>
+<span class="text-white font-medium">Facebook</span>
+</button>
+<!-- Nextdoor -->
+<button class="flex items-center gap-4 bg-card-dark border border-white/10 hover:border-primary/50 p-5 rounded-xl transition-all group">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-green-500/10 text-green-400">
+<span class="material-symbols-outlined">home</span>
+</div>
+<span class="text-white font-medium">Nextdoor</span>
+</button>
+<!-- Copy Link -->
+<button class="flex items-center gap-4 bg-card-dark border border-white/10 hover:border-primary/50 p-5 rounded-xl transition-all group">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">link</span>
+</div>
+<span class="text-white font-medium">Copy Link</span>
+</button>
+</div>
+</div>
+<!-- Footer / Skip -->
+<div class="text-center">
+<a class="text-muted-gray hover:text-white text-sm font-medium transition-colors underline underline-offset-4 decoration-white/20" href="#">
+                    Skip for now
+                </a>
+</div>
+</div>
+<!-- Progress Indicator -->
+<div class="fixed bottom-10 flex gap-2">
+<div class="w-8 h-1 bg-primary rounded-full"></div>
+<div class="w-8 h-1 bg-primary rounded-full"></div>
+<div class="w-12 h-1 bg-primary rounded-full"></div>
+<div class="w-8 h-1 bg-white/10 rounded-full"></div>
+</div>
+</div>
+</body></html>

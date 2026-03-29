@@ -1,0 +1,30 @@
+{
+    "screenshot": {
+        "name": "projects/6015041271196470309/files/7386a20f886245a0a510e6510c07a4cd",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uic5j9eYbtfy4Lgy5NDb_mnfcxyRuuRVY3647svXz_QG7cIsw6WR8DIooRjpbrXUdnU7guo79JG6IL_wWX1HmWz8sSQFTPiwaNj3wdqyQCA6TeyRL_I_hnYMCbqyzh-swqjYIQgB4uo_sJhk0HC-enS7drvsd8jwxOJJKTZt47Jhzs4_ge1tqT9-1sWzIyzdzW2eF81RUp9Q2kGelVduHYrEzkuCgDKhwWX_eOuzHX21Q7cFHIEIlvABA"
+    },
+    "htmlCode": {
+        "name": "projects/6015041271196470309/files/7507bbb295664b14af1e030c427bab00",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzg1MjRjNTI0MWQ4NTQ3NGU4ZDQ5MzIzNmRmMWZhZGJhEgsSBxCA3cuCnB8YAZIBIwoKcHJvamVjdF9pZBIVQhM2MDE1MDQxMjcxMTk2NDcwMzA5&filename=&opi=89354086"
+    },
+    "id": "0e6a20e500aa4b15bfa44e564593e1ec",
+    "generatedBy": "figaro_agent",
+    "width": "2560",
+    "height": "2048",
+    "title": "Emotion Picker Screen",
+    "prompt": "Title: Emotion Picker Screen\nContext: Emotion picker screen for HoneyDo2Done, a therapeutic household management app, inspired by mindfulness and 'How We Feel' aesthetics.\nDescription of the screen: A therapeutic emotion picker screen with a deep charcoal black (#0D0D0D) background. At the top center, 'How's this making you feel?' is written in a clean white font. The core content is a 2x2 grid of four large, soft-gradient circular buttons (approx 140px diameter) with generous spacing. Top Left: Coral red to orange gradient ('High Energy Unpleasant'). Top Right: Yellow to amber gradient ('High Energy Pleasant'). Bottom Left: Blue to purple gradient ('Low Energy Unpleasant'). Bottom Right: Teal to green gradient ('Low Energy Pleasant'). Labels are centered inside each circle in white text. A subtle, muted 'Skip' button is at the bottom. The overall vibe is calm, reflective, and inviting.\nPlatform: web\nForm factor: desktop",
+    "name": "projects/6015041271196470309/screens/0e6a20e500aa4b15bfa44e564593e1ec",
+    "theme": {
+        "colorMode": "DARK",
+        "font": "INTER",
+        "roundness": "ROUND_FULL",
+        "customColor": "#13ec80",
+        "saturation": 3
+    },
+    "deviceType": "DESKTOP",
+    "screenType": "DESIGN",
+    "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+    }
+}

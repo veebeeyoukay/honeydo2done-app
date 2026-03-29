@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f5a524",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#0D0D0D",
+                        "card-dark": "#1A1A1A",
+                        "teal-glow": "#4ECDC4",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .teal-gradient-bg {
+            background: radial-gradient(circle at top, rgba(78, 205, 196, 0.15) 0%, rgba(13, 13, 13, 0) 70%);
+        }
+    </style>
+</head>
+<body class="bg-[#0D0D0D] font-display text-white selection:bg-primary/30">
+<div class="relative min-h-screen flex flex-col teal-gradient-bg">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-6 py-4 md:px-40">
+<div class="flex items-center gap-4 text-white">
+<div class="size-8 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-tight">HoneyDo2Done</h2>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-full h-10 w-10 bg-white/5 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-white text-[20px]">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-full h-10 w-10 bg-white/5 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-white text-[20px]">account_circle</span>
+</button>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center justify-start px-4 py-12">
+<div class="w-full max-w-[640px] flex flex-col items-center gap-8">
+<div class="text-center space-y-3">
+<h1 class="text-white text-4xl md:text-5xl font-bold tracking-tight">Kitchen faucet is done!</h1>
+</div>
+<div class="flex flex-col items-center gap-4">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-24 w-24 border-4 border-[#4ECDC4]/20 ring-4 ring-primary/10" data-alt="Close up portrait of Jake smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuADe1adFOxlkWgrSxiry-tVe749mQBdyPpiKfnVFsJ_pecL1CwSGZ15e1KM47-yuQuCW4cefYwo3sIAWGLJEqaLLNN9pQ5SwVeneEcFwJhkDc6wsV0Gk9Xc8vzH-dj7qVR4RMBaVUNYF9SayW_frlil9G8EfWEKs-AQ9GFBmIAoIX0U7UsA1nWIUvO9LT62WoROP0wVWNx25v-AZk0lg8RUwI_9KqsQol3AM0kpZ82dI74NiWGO7R8bj4L19Rlw7gFP7_t6zHa2Tic");'>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-green-500 h-6 w-6 rounded-full border-4 border-[#0D0D0D]"></div>
+</div>
+<div class="text-center">
+<p class="text-white text-xl font-bold">Jake</p>
+<p class="text-gray-400 text-sm font-normal">Jake finished this 5 minutes ago</p>
+</div>
+</div>
+<div class="w-full bg-[#1A1A1A] rounded-xl overflow-hidden shadow-2xl border border-white/5">
+<div class="p-6 md:p-8 flex flex-col gap-6">
+<div class="relative bg-white/5 p-4 rounded-2xl rounded-tl-none border-l-4 border-primary">
+<p class="text-white text-lg italic leading-relaxed font-normal">
+                            "Replaced the washer - should be good for years now!"
+                        </p>
+<p class="text-primary/70 text-xs font-bold uppercase tracking-wider mt-3">Completion Note</p>
+</div>
+<div class="relative w-full aspect-video rounded-xl overflow-hidden group">
+<div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300"></div>
+<div class="w-full h-full bg-center bg-cover" data-alt="Modern shiny kitchen faucet with running water" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAetU6sHiKwfDxynLYG1ACiyxvpcr42OZJbM94uOneKbzO2zG88sqNT2eAXCTD5eQUuiTIYF1nEvjusreaRDss3hxGesnWkX78dPb7nIVdj2CIuowwWX4C04KlwQENVM25auyKFgGnNLURE1jJT1xlAmcJPEC1KHMqDXstGynQVuv5nGWC5642qNR51HT97anjygL-IPHwwMYl8c_U0pd5w-oiEshXYhvjOkBPs9VCVSdDpuEo973inx2kd7PloaZCKn5d4xyXPbZ0");'>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full flex flex-col items-center gap-4 p-4">
+<h4 class="text-gray-400 text-sm font-normal tracking-widest uppercase">How do you feel now?</h4>
+<div class="flex gap-6">
+<button class="group flex flex-col items-center gap-2">
+<div class="h-10 w-10 rounded-full bg-red-500/20 border-2 border-red-500/40 group-hover:bg-red-500/40 transition-all scale-100 group-hover:scale-110"></div>
+<span class="text-[10px] text-gray-500 font-bold uppercase">Stressed</span>
+</button>
+<button class="group flex flex-col items-center gap-2">
+<div class="h-10 w-10 rounded-full bg-yellow-500/20 border-2 border-yellow-500/40 group-hover:bg-yellow-500/40 transition-all scale-100 group-hover:scale-110"></div>
+<span class="text-[10px] text-gray-500 font-bold uppercase">Anxious</span>
+</button>
+<button class="group flex flex-col items-center gap-2">
+<div class="h-10 w-10 rounded-full bg-blue-500/60 border-2 border-blue-400 group-hover:bg-blue-500/80 transition-all scale-110 ring-4 ring-blue-500/20"></div>
+<span class="text-[10px] text-blue-400 font-bold uppercase">Relieved</span>
+</button>
+<button class="group flex flex-col items-center gap-2">
+<div class="h-10 w-10 rounded-full bg-green-500/20 border-2 border-green-500/40 group-hover:bg-green-500/40 transition-all scale-100 group-hover:scale-110"></div>
+<span class="text-[10px] text-gray-500 font-bold uppercase">Happy</span>
+</button>
+</div>
+</div>
+<div class="w-full pb-12">
+<button class="w-full py-5 bg-primary hover:bg-[#e0941d] text-[#0D0D0D] text-lg font-bold rounded-full flex items-center justify-center gap-3 transition-all transform hover:-translate-y-1 shadow-xl shadow-primary/20">
+<span class="material-symbols-outlined font-bold">share</span>
+                    Share this win
+                </button>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

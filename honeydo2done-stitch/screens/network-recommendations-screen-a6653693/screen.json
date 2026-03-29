@@ -1,0 +1,30 @@
+{
+    "screenshot": {
+        "name": "projects/6015041271196470309/files/a35c011a3af64832966986cf3e9f8db2",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uj8hXOMuo1L1bBSGct3niIKs1GXT1WGpVZjqqejnIUc-mHtmpFAhhtOEB2XZKlrgetS5nWde6rXabvE4GpuGvuoxcB-_kQikJ0pacaOZ7nWBR4bTCqf8fVKqsnNcJeekwlEORRkW6OWKfLtNxBS02HNNdVSJHhNHTUDIWIP4TJIh7561dxGofspaGJoo1RanxJMrtrSgYNOQFr8PL9XB4-pn0iRkzRU9o9jQ_0vK5vP61NRBOsx6wxzO-w"
+    },
+    "htmlCode": {
+        "name": "projects/6015041271196470309/files/1bd73300848f4efd9243c95198b8f03d",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzgzN2RlNzdlNDI2NDQ1ZjE5MzMzZTliYTAyY2QxM2U2EgsSBxCA3cuCnB8YAZIBIwoKcHJvamVjdF9pZBIVQhM2MDE1MDQxMjcxMTk2NDcwMzA5&filename=&opi=89354086"
+    },
+    "id": "a665369329e24d5fbc31e6ce862ad9c3",
+    "generatedBy": "figaro_agent",
+    "width": "2560",
+    "height": "2048",
+    "title": "Network Recommendations Screen",
+    "prompt": "Title: Network Recommendations Screen\nContext: Task referral screen for HoneyDo2Done, helping users transition from a stuck task to finding outside help through their network.\nDescription of the screen: An empowering 'Get recommendations' screen with a deep charcoal black (#0D0D0D) background. At the top, the title 'Tap your network' in bold white with the subtitle 'Your friends probably know someone great' in muted gray. A central card (#1A1A1A) with 12px rounded corners displays a pre-written message: 'Anyone know a good plumber? We have a dripping faucet that needs professional help.', including a small honey gold edit icon in the corner. Below, a 2x2 grid of share destination buttons: 'Text Message', 'Facebook', 'Nextdoor', and 'Copy Link'. Each button is a dark gray card with a subtle border and a clean, minimal icon. At the very bottom, a 'Skip for now' link in muted gray text. The design is clean, focused, and designed to turn a blocker into a proactive next step.\nPlatform: web\nForm factor: desktop",
+    "name": "projects/6015041271196470309/screens/a665369329e24d5fbc31e6ce862ad9c3",
+    "theme": {
+        "colorMode": "DARK",
+        "font": "INTER",
+        "roundness": "ROUND_TWELVE",
+        "customColor": "#f2bd0d",
+        "saturation": 3
+    },
+    "deviceType": "DESKTOP",
+    "screenType": "DESIGN",
+    "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "screenshot": {
+        "name": "projects/6015041271196470309/files/29b61d6cf2d444adbf6db5bdbd4e4aff",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ugogyWLJzDo179QgPqjVzh0K8o3G50Ng9n2pZLgrg76WRg04GEUs6hnFL2ym3d7ynwSaO1h87vNiBLaYq-wMTYIHBVexOVayqf8qEkB7WAf37BECgOgvYHelTrQeNn13Tq4hOXZAsiy9Eii2LmklqyMOfS1HCUmiKtj2vNJsB44cFAGT0edyPQkhJrcWVo6LIa-s2MgLz1wIo-f4HUbdNXfPkWEUiWcmTuSlGMCGlnYFZ8zq1NgEsB_jQ"
+    },
+    "htmlCode": {
+        "name": "projects/6015041271196470309/files/390642e578d44f7f98b1b301266364ed",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2RlNmY4MTM2NTY1MDQ5OTI4MDQ0NTZlOGJhYjg4ODI1EgsSBxCA3cuCnB8YAZIBIwoKcHJvamVjdF9pZBIVQhM2MDE1MDQxMjcxMTk2NDcwMzA5&filename=&opi=89354086"
+    },
+    "id": "4d680e71f03747398451f56a9aff8336",
+    "generatedBy": "edit_agent",
+    "width": "2560",
+    "height": "2412",
+    "title": "Partner Task Receipt Screen",
+    "prompt": "Title: Tactile Partner Receipt Screen\nContext: Task detail screen for the 'Doer' (fixer) in the HoneyDo2Done app, designed for clear communication and decisive action.\nEdit request: Add interactive depth to the partner receipt screen. The primary green, yellow, and red buttons should feature subtle 'pressable' gradients and soft shadows. The 'Important to her' badge should have a faint pulse-like outer glow. The task description card should have a thin, light-gray border to suggest elevation.\nPlatform: web\nForm factor: desktop",
+    "name": "projects/6015041271196470309/screens/4d680e71f03747398451f56a9aff8336",
+    "theme": {
+        "colorMode": "DARK",
+        "font": "INTER",
+        "roundness": "ROUND_TWELVE",
+        "customColor": "#4ccdc4",
+        "saturation": 3
+    },
+    "deviceType": "DESKTOP",
+    "screenType": "DESIGN",
+    "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+    }
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Invite Your Partner - HoneyDo2Done</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f5a524",
+              "background-light": "#f8f7f5",
+              "background-dark": "#0D0D0D", // Updated to the requested charcoal black
+              "surface-dark": "#1A1A1A",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .connection-graphic {
+            position: relative;
+            height: 120px;
+            width: 180px;
+            margin: 0 auto;
+        }
+        .circle-gold {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: #f5a524;
+            filter: blur(25px);
+            opacity: 0.6;
+            border-radius: 50%;
+            left: 20px;
+            top: 20px;
+        }
+        .circle-teal {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: #2dd4bf;
+            filter: blur(25px);
+            opacity: 0.6;
+            border-radius: 50%;
+            right: 20px;
+            top: 20px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen transition-colors duration-300">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Header / Logo Area -->
+<header class="flex items-center justify-between whitespace-nowrap px-10 py-5 lg:px-40">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_319)">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_6_319"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] font-display">HoneyDo2Done</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-white/10" data-alt="Avatar of current user" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDTkNR48BGArFq8mZvHyXRiEcnjuimcJiVrgXylgbUTXSoZp8ChWbuTIgjX2eCI0VUcTu3mYRp2eAO2XEetWyJCoEFfofbRjQhhiEIEFN36pb4nLG2tkcwPejU-2H6oJwQ5JjO_m1MdGh106zYub-g3OkDvd11KpKnl6eT-I2-SlGtbP5HLoaROdcLnK_-IKqTqPVhVXHypYXqd_e9gxyAyOnjW5TIEQ8KIOvKyo4gTLxlvTwVPvGmi3m8wdfSifc3iWx5zejRkQHc");'></div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-10 px-6">
+<div class="layout-content-container flex flex-col max-w-[480px] w-full flex-1 justify-center">
+<!-- Headline -->
+<div class="mb-2">
+<h1 class="text-white tracking-tight text-[32px] font-bold leading-tight text-center font-display">
+                        Who does your honey-do list go to?
+                    </h1>
+</div>
+<!-- Abstract Illustration -->
+<div class="py-8 flex justify-center">
+<div class="connection-graphic" data-alt="Abstract glowing circles representing partnership connection">
+<div class="circle-gold"></div>
+<div class="circle-teal"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white/40 text-4xl">favorite</span>
+</div>
+</div>
+</div>
+<!-- Form Section -->
+<div class="flex flex-col gap-4">
+<!-- Text Field 1: Name -->
+<div class="flex flex-col gap-2">
+<label class="flex flex-col flex-1">
+<p class="text-white/80 text-sm font-medium leading-normal pb-1 px-1">Their name</p>
+<input class="form-input flex w-full min-w-0 flex-1 rounded-xl text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-white/10 bg-surface-dark focus:border-primary h-14 placeholder:text-white/30 px-4 text-base font-normal" placeholder="Enter partner's name" type="text"/>
+</label>
+</div>
+<!-- Text Field 2: Email -->
+<div class="flex flex-col gap-2">
+<label class="flex flex-col flex-1">
+<p class="text-white/80 text-sm font-medium leading-normal pb-1 px-1">Their email</p>
+<input class="form-input flex w-full min-w-0 flex-1 rounded-xl text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-white/10 bg-surface-dark focus:border-primary h-14 placeholder:text-white/30 px-4 text-base font-normal" placeholder="Enter partner's email" type="email"/>
+</label>
+</div>
+<!-- Primary Action Button -->
+<button class="mt-4 w-full h-14 bg-primary hover:bg-primary/90 text-background-dark font-bold text-lg rounded-xl transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 group">
+<span>Send invite</span>
+<span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">send</span>
+</button>
+</div>
+<!-- Footer Links -->
+<div class="mt-10 flex flex-col items-center gap-2">
+<button class="text-white/60 hover:text-white text-base font-medium transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white">
+                        Skip for now
+                    </button>
+<p class="text-white/40 text-sm text-center">
+                        You can always add someone later
+                    </p>
+</div>
+</div>
+</main>
+<!-- Footer Decoration -->
+<footer class="py-8 px-10 text-center">
+<div class="flex items-center justify-center gap-2 text-white/20 select-none">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span class="text-xs uppercase tracking-widest">Secure &amp; Private</span>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

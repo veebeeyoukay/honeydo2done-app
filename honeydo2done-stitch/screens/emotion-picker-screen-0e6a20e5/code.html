@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Emotion Picker | HoneyDo2Done</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec80",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#0D0D0D", // Overridden to match specific charcoal request
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom gradients for the emotion picker */
+        .gradient-unpleasant-high { background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); }
+        .gradient-pleasant-high { background: linear-gradient(135deg, #FFD93D 0%, #FF9800 100%); }
+        .gradient-unpleasant-low { background: linear-gradient(135deg, #4facfe 0%, #bc17ff 100%); }
+        .gradient-pleasant-low { background: linear-gradient(135deg, #00f2fe 0%, #13ec80 100%); }
+        
+        .emotion-circle {
+            width: 160px;
+            height: 160px;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .emotion-circle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white min-h-screen">
+<div class="layout-container flex flex-col min-h-screen">
+<!-- Navigation Header -->
+<header class="flex items-center justify-between px-6 py-4 md:px-20 border-b border-white/10">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_319)">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_6_319"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-white text-xl font-bold tracking-tight">HoneyDo2Done</h2>
+</div>
+<button class="flex items-center justify-center rounded-full size-10 bg-white/10 text-white hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col items-center justify-center px-4 py-12 max-w-[1200px] mx-auto w-full">
+<!-- Headline -->
+<div class="mb-12">
+<h1 class="text-white text-3xl md:text-4xl font-bold text-center tracking-tight">How's this making you feel?</h1>
+<p class="text-white/50 text-center mt-3 text-lg">Take a moment to check in with yourself.</p>
+</div>
+<!-- Emotion Grid -->
+<div class="grid grid-cols-2 gap-8 md:gap-16 p-4">
+<!-- High Energy / Unpleasant -->
+<button class="emotion-circle rounded-full flex flex-col items-center justify-center p-6 text-center shadow-lg gradient-unpleasant-high group relative overflow-hidden" data-alt="Soft coral to orange gradient circle">
+<span class="text-white text-sm font-semibold uppercase tracking-wider mb-1 opacity-80">High Energy</span>
+<span class="text-white text-lg font-bold leading-tight">Unpleasant</span>
+<div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</button>
+<!-- High Energy / Pleasant -->
+<button class="emotion-circle rounded-full flex flex-col items-center justify-center p-6 text-center shadow-lg gradient-pleasant-high group relative overflow-hidden" data-alt="Soft yellow to amber gradient circle">
+<span class="text-white text-sm font-semibold uppercase tracking-wider mb-1 opacity-80">High Energy</span>
+<span class="text-white text-lg font-bold leading-tight">Pleasant</span>
+<div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</button>
+<!-- Low Energy / Unpleasant -->
+<button class="emotion-circle rounded-full flex flex-col items-center justify-center p-6 text-center shadow-lg gradient-unpleasant-low group relative overflow-hidden" data-alt="Soft blue to purple gradient circle">
+<span class="text-white text-sm font-semibold uppercase tracking-wider mb-1 opacity-80">Low Energy</span>
+<span class="text-white text-lg font-bold leading-tight">Unpleasant</span>
+<div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</button>
+<!-- Low Energy / Pleasant -->
+<button class="emotion-circle rounded-full flex flex-col items-center justify-center p-6 text-center shadow-lg gradient-pleasant-low group relative overflow-hidden" data-alt="Soft teal to green gradient circle">
+<span class="text-white text-sm font-semibold uppercase tracking-wider mb-1 opacity-80">Low Energy</span>
+<span class="text-white text-lg font-bold leading-tight">Pleasant</span>
+<div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</button>
+</div>
+<!-- Footer Actions -->
+<div class="mt-16 flex flex-col items-center gap-4">
+<button class="flex items-center justify-center px-8 py-2 rounded-full text-white/40 hover:text-white hover:bg-white/5 transition-all text-sm font-medium tracking-wide">
+<span>Skip for now</span>
+</button>
+<div class="flex items-center gap-2 mt-4">
+<div class="h-1 w-12 bg-primary rounded-full"></div>
+<div class="h-1 w-2 bg-white/10 rounded-full"></div>
+<div class="h-1 w-2 bg-white/10 rounded-full"></div>
+</div>
+</div>
+</main>
+<!-- Context Footer -->
+<footer class="p-8 text-center text-white/20 text-xs">
+<p>© 2024 HoneyDo2Done • Mindful Productivity</p>
+</footer>
+</div>
+</body></html>

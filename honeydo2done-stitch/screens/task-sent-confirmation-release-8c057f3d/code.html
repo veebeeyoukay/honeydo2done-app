@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Task Sent Confirmation - HoneyDo2Done</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4ecdc4",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#0d0d0d",
+                        "card-dark": "#1a1a1a",
+                        "honey-gold": "#F5A623"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        :root {
+            --glow-color: rgba(78, 205, 196, 0.45);
+        }
+        .vibrant-glow {
+            box-shadow: 0 0 80px 30px var(--glow-color), inset 0 0 20px rgba(78, 205, 196, 0.3);
+        }
+        .inner-container-shadow {
+            box-shadow: inset 0 2px 8px 0 rgba(0, 0, 0, 0.4), 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+        }
+        .pill-gradient {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+        .elevation-shadow {
+            box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.3), 0 2px 6px -1px rgba(0, 0, 0, 0.2);
+        }
+        .breathing-ring {
+            border: 2px solid rgba(78, 205, 196, 0.15);
+            width: 220px;
+            height: 220px;
+        }
+        .bg-radial-gradient {
+            background: radial-gradient(circle at center, rgba(78, 205, 196, 0.15) 0%, transparent 75%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex flex-col items-center overflow-x-hidden">
+<div class="w-full max-w-[960px] px-6 lg:px-10">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-gray-200 dark:border-b-zinc-800 py-3">
+<div class="flex items-center gap-4 text-gray-900 dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_319)">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+</g>
+<defs><clipPath id="clip0_6_319"><rect fill="white" height="48" width="48"></rect></clipPath></defs>
+</svg>
+</div>
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">HoneyDo2Done</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-zinc-700" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBESFGDywhRAKUZHnPgLhLAI4rYkg37ilM07RtYW94i8JQm4DzndSBqzYJouu8dirBgGikt-XPzMbnDcDICwLdiCV1Fii81Ubq06n0NsOGGoDbv5IosbW_3K6giq7-EmBAlIPoRdtZKLBv6tqfRD-l_tXfYXwAPhLQIxexP0uyrpcsR-JX-Ro8Vyk-2C5GEkzMwKlTTSjphsmHWhEXtHZSZ-BKjAbwSRvlVsvWkrtGTPDb7XJgbfjL8y2vMn9srEsPgW18oitrk7FQ");'></div>
+</div>
+</header>
+</div>
+<main class="flex-1 w-full max-w-[480px] px-6 flex flex-col items-center justify-center py-16 relative">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-radial-gradient pointer-events-none -z-10"></div>
+<div class="relative flex items-center justify-center mb-16">
+<div class="breathing-ring rounded-full absolute flex items-center justify-center">
+<div class="w-[180px] h-[180px] rounded-full border border-primary/20 flex items-center justify-center"></div>
+</div>
+<div class="bg-primary/20 rounded-full p-8 vibrant-glow border border-primary/50 relative z-10">
+<span class="material-symbols-outlined text-[72px] text-primary" style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;">
+                check_circle
+            </span>
+</div>
+</div>
+<div class="text-center mb-12 flex flex-col gap-3">
+<h1 class="text-gray-900 dark:text-white tracking-tight text-[36px] font-bold leading-tight">Sent to Jake</h1>
+<div class="flex flex-col gap-1">
+<p class="text-gray-500 dark:text-zinc-500 text-lg font-normal">Fix the kitchen sink</p>
+<div class="flex items-center justify-center gap-2 mt-2">
+<span class="px-3 py-1 bg-red-500/10 text-red-400 text-xs font-bold uppercase tracking-wider rounded-full border border-red-500/20">
+                    High Energy Unpleasant
+                </span>
+</div>
+</div>
+</div>
+<div class="w-full bg-white dark:bg-card-dark rounded-[2.5rem] border border-gray-100 dark:border-zinc-800/50 p-8 inner-container-shadow mb-12">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-primary/20" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDN8ulgPTkFt6Yx_t23LHJo98MNmGEaHEPlB1lk9KvfzycXYf-BY0iZSQHWlvrpmfuOGQjooCKZttLTkZk4ZKmcNbrT0JUFWjc18lgfMZBCGcnt8SeIU4QXw3w2-Yk7euOQ-T6VEHdOVvMdgV-WSLrShET64jSqW3n1tLIhVigRnJfY2PYkwX_FXP7tPxclYz7ZoMG6RuZiZOgRywAY5yPaUykJ0TPu3AsetLXe8JrsteH0D0A5VJfpckIZ1KJxdtIVJoaTNeG6Ns8");'></div>
+<p class="text-gray-400 dark:text-zinc-400 text-base font-medium">Jake might ask:</p>
+</div>
+<p class="text-gray-900 dark:text-white text-2xl font-semibold leading-snug">
+                "Have you tried turning it off and on?"
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="flex-1 flex min-w-[84px] cursor-pointer items-center justify-center rounded-full h-14 px-6 border border-zinc-200 dark:border-zinc-700 pill-gradient elevation-shadow text-gray-900 dark:text-white text-sm font-semibold hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all active:scale-95">
+                    Already tried that
+                </button>
+<button class="flex-1 flex min-w-[84px] cursor-pointer items-center justify-center rounded-full h-14 px-6 border border-zinc-200 dark:border-zinc-700 pill-gradient elevation-shadow text-gray-900 dark:text-white text-sm font-semibold hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all active:scale-95">
+                    I'll try now
+                </button>
+</div>
+</div>
+</div>
+<div class="flex justify-center mb-8">
+<a class="text-honey-gold text-sm font-bold flex items-center gap-2 hover:bg-honey-gold/10 px-10 py-4 rounded-full border border-honey-gold/40 transition-all elevation-shadow pill-gradient" href="#">
+            Just send it 
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<div class="text-zinc-500 dark:text-zinc-600 text-sm italic font-medium">
+        Feeling lighter? Close this screen to keep going.
+    </div>
+</main>
+
+</body></html>

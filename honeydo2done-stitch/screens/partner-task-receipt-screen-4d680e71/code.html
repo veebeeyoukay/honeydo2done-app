@@ -1,0 +1,156 @@
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tactile Partner Receipt Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4ECDC4", // Teal Green
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#0D0D0D",
+                        "card-dark": "#1A1A1A",
+                        "honey-gold": "#F5A623",
+                        "coral-red": "#FF6B6B"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    animation: {
+                        'pulse-glow': 'pulse-glow 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        'pulse-glow': {
+                            '0%, 100%': { boxShadow: '0 0 0 0 rgba(255, 107, 107, 0)' },
+                            '50%': { boxShadow: '0 0 12px 4px rgba(255, 107, 107, 0.3)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .btn-pressable-green {
+            background: linear-gradient(180deg, #4ECDC4 0%, #3db4ac 100%);
+            box-shadow: 0 4px 0 0 #2a8a83, 0 10px 20px -5px rgba(78, 205, 196, 0.3);
+        }
+        .btn-pressable-green:active {
+            box-shadow: 0 1px 0 0 #2a8a83, 0 4px 10px -2px rgba(78, 205, 196, 0.2);
+            transform: translateY(3px);
+        }
+        .btn-pressable-gold {
+            background: linear-gradient(180deg, #F5A623 0%, #d88d15 100%);
+            box-shadow: 0 4px 0 0 #a36a10, 0 10px 20px -5px rgba(245, 166, 35, 0.3);
+        }
+        .btn-pressable-gold:active {
+            box-shadow: 0 1px 0 0 #a36a10, 0 4px 10px -2px rgba(245, 166, 35, 0.2);
+            transform: translateY(3px);
+        }
+        .btn-pressable-red {
+            background: linear-gradient(180deg, #251010 0%, #1a0a0a 100%);
+            box-shadow: 0 4px 0 0 #8b3b3b, 0 10px 20px -5px rgba(255, 107, 107, 0.2);
+        }
+        .btn-pressable-red:active {
+            box-shadow: 0 1px 0 0 #8b3b3b, 0 4px 10px -2px rgba(255, 107, 107, 0.1);
+            transform: translateY(3px);
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-white min-h-screen font-display">
+<div class="flex justify-center py-4 border-b border-white/5">
+<div class="w-full max-w-[960px] px-6 lg:px-10 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-card-dark text-white hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<div class="flex items-center gap-2">
+<div class="size-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+</svg>
+</div>
+<span class="text-sm font-bold tracking-tight text-white/70">HoneyDo2Done</span>
+</div>
+</div>
+</div>
+</div>
+<main class="flex flex-col items-center justify-start py-12 px-6">
+<div class="w-full max-w-[800px] flex flex-col gap-[12px]">
+<div class="flex flex-col gap-[12px]">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2">
+<img alt="Jen" class="size-6 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEK1CbqAg-s-e83goV1luNHUPI2WgVkxtTBVpGr89T0psJwC1jyykAQDd5GQsVs9FRjgOcpnW7r695aNlOYE9FPA6VXfCG7mPO4r-PH1sz2bmu1LMonqmdAJzZTHhenU2i8kfYc3w4BARMtKzB78aKIlwX35B4skToBRKnCwtdw8bdzrKyTnPkqvFuSBcIAeJnKO3bE3YOSp450EsEugA7OLnKgQqKytFrwwL8xjqxaIAwx4W7ZCVJoUHPIl9Dd7IaAC7DUQf6LgQ"/>
+<p class="text-white/60 text-base font-medium">from Jen • 2 hours ago</p>
+</div>
+<div class="bg-coral-red/10 px-3 py-1 rounded-full flex items-center justify-center animate-pulse-glow">
+<span class="text-coral-red font-semibold text-xs tracking-wide">Important to her</span>
+</div>
+</div>
+<h1 class="text-white text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight">Kitchen faucet dripping</h1>
+</div>
+<div class="bg-card-dark rounded-2xl p-4 flex flex-col md:flex-row gap-6 border border-[#2d2d2d] shadow-2xl mt-[12px] relative overflow-hidden group">
+<div class="w-full md:w-56 shrink-0 bg-white/5 rounded-xl p-4">
+<div class="aspect-square w-full rounded-lg bg-cover bg-center overflow-hidden border border-white/10 shadow-inner" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCziDTSXl_220TYKLDhIZtthecAyCmdgzSB__1mEYL6sDNevNrfPnRy_xcOT7JDrtHvwcdNfFG-MhAaHc6yAP1HvWKXfSqqOSXVDn3zeTuOoxlqjxZjXb-LfuewgUAjgpDTXVmCKqveZGpIn3J-1nlXiv7n2hIlM1ZATAImxJqKRicrz69-H8zU8Xm_cygngCefCqQfKjlRz_hTbqsbzrkuM_mQJClmDOMpO3F-8iVSx90kV4UJlhb-Unks9m14AxPFwF6stcOxInk");'>
+</div>
+</div>
+<div class="flex flex-col justify-center px-4 md:px-4 md:py-4">
+<p class="text-white/90 text-xl leading-relaxed font-medium">
+                    The kitchen faucet has a steady drip that's getting worse. Needs a washer replacement or a quick look at the handle. I tried tightening it but it didn't help.
+                </p>
+</div>
+</div>
+<div class="flex flex-col gap-[12px] pt-[12px]">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-6">
+<button class="btn-pressable-green group flex flex-col items-center justify-center gap-4 py-14 px-10 text-background-dark font-bold text-2xl rounded-full transition-all duration-75">
+<span class="material-symbols-outlined text-5xl font-bold">check_circle</span>
+<span>I got this</span>
+</button>
+<button class="btn-pressable-gold group flex flex-col items-center justify-center gap-4 py-14 px-10 text-background-dark font-bold text-2xl rounded-full transition-all duration-75">
+<span class="material-symbols-outlined text-5xl font-bold">group</span>
+<span>Need help</span>
+</button>
+<button class="btn-pressable-red group flex flex-col items-center justify-center gap-4 py-14 px-10 border-2 border-coral-red/30 text-coral-red font-bold text-2xl rounded-full transition-all duration-75">
+<span class="material-symbols-outlined text-5xl font-bold">cancel</span>
+<span>Not me</span>
+</button>
+</div>
+<p class="text-center text-white/50 text-lg font-semibold italic mt-8">
+                Tap to let Jen know where you stand
+            </p>
+</div>
+<div class="mt-8 border-t border-white/5 pt-12">
+<h3 class="text-white/30 text-xs font-bold uppercase tracking-[0.3em] mb-8">Task Details</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex items-center gap-5 bg-card-dark/40 px-6 py-5 rounded-2xl border border-white/5">
+<span class="material-symbols-outlined text-primary text-3xl">location_on</span>
+<p class="text-white/90 text-base font-semibold">Main Kitchen, First Floor</p>
+</div>
+<div class="flex items-center gap-5 bg-card-dark/40 px-6 py-5 rounded-2xl border border-white/5">
+<span class="material-symbols-outlined text-primary text-3xl">build</span>
+<p class="text-white/90 text-base font-semibold">Suggested tools: Wrench, Screwdriver</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div class="h-24"></div>
+
+</body></html>

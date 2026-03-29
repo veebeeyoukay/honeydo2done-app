@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>HoneyDo2Done - Prototype</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#49d0c2",
+                        "primary-dark": "#3db4ac",
+                        "background-dark": "#0A0A0A",
+                        "card-dark": "#1A1A1A",
+                        "honey-gold": "#F5A623",
+                        "accent-teal": "#4ECDC4",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "pill": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @keyframes pulse-ring-1 { 0% { transform: scale(1); opacity: 0.4; } 50% { transform: scale(1.1); opacity: 0.1; } 100% { transform: scale(1); opacity: 0.4; } }
+        @keyframes pulse-ring-2 { 0% { transform: scale(1.1); opacity: 0.2; } 50% { transform: scale(1.3); opacity: 0.05; } 100% { transform: scale(1.1); opacity: 0.2; } }
+        @keyframes pulse-ring-3 { 0% { transform: scale(1.2); opacity: 0.1; } 50% { transform: scale(1.5); opacity: 0.02; } 100% { transform: scale(1.2); opacity: 0.1; } }
+        .animate-pulse-1 { animation: pulse-ring-1 5s ease-in-out infinite; }
+        .animate-pulse-2 { animation: pulse-ring-2 7s ease-in-out infinite; }
+        .animate-pulse-3 { animation: pulse-ring-3 9s ease-in-out infinite; }
+        
+        .glow-effect { box-shadow: 0 0 50px 10px rgba(73, 208, 194, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.3); }
+        .pill-tactile { box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(255, 255, 255, 0.08); }
+        .soft-transition { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .bg-radial-focus { background: radial-gradient(circle at center, #1e1e1e 0%, #0a0a0a 75%, #050505 100%); }
+        
+        .orb-depth {
+            box-shadow: inset 0 16px 32px -8px rgba(255, 255, 255, 0.45), inset 0 -16px 32px -12px rgba(0, 0, 0, 0.6), 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        }
+        .gradient-unpleasant-high { background: radial-gradient(circle at 35% 25%, #FFB095 0%, #FF5C5C 45%, #9B1B1B 100%); }
+        .gradient-pleasant-high { background: radial-gradient(circle at 35% 25%, #FFF2C5 0%, #FFD32D 45%, #B56500 100%); }
+        .gradient-unpleasant-low { background: radial-gradient(circle at 35% 25%, #A5D8FF 0%, #3B82F6 45%, #4C1D95 100%); }
+        .gradient-pleasant-low { background: radial-gradient(circle at 35% 25%, #C2FFEA 0%, #49d0c2 45%, #00635A 100%); }
+        
+        .honey-gradient { background: linear-gradient(135deg, #F5A623 0%, #d98a0d 100%); }
+        .btn-pressable-green {
+            background: linear-gradient(180deg, #4ECDC4 0%, #3db4ac 100%);
+            box-shadow: 0 4px 0 0 #2a8a83, 0 10px 20px -5px rgba(78, 205, 196, 0.3);
+        }
+        .btn-pressable-gold {
+            background: linear-gradient(180deg, #F5A623 0%, #d88d15 100%);
+            box-shadow: 0 4px 0 0 #a36a10, 0 10px 20px -5px rgba(245, 166, 35, 0.3);
+        }
+
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-outlined.fill { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="bg-background-dark text-white font-display overflow-x-hidden selection:bg-primary/30">
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/history@5/umd/history.development.js"></script>
+    <script src="https://unpkg.com/react-router@6.3.0/umd/react-router.development.js"></script>
+    <script src="https://unpkg.com/react-router-dom@6.3.0/umd/react-router-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+        const { createRoot } = ReactDOM;
+        const { MemoryRouter, Routes, Route, Link, useNavigate } = ReactRouterDOM;
+
+        // --- Common Components ---
+        const Logo = ({ className = "size-5 text-primary" }) => (
+            <div className={className}>
+                <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+                </svg>
+            </div>
+        );
+
+        // --- Screen 1: Voice Capture ---
+        const VoiceCapturePage = () => {
+            const navigate = useNavigate();
+            return (
+                <div className="relative flex h-screen w-full flex-col bg-radial-focus overflow-hidden">
+                    <header className="flex items-center justify-between px-8 py-8 md:px-12 z-20">
+                        <button onClick={() => navigate('/dashboard')} className="group flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white/60 hover:bg-white/20 hover:text-white soft-transition pill-tactile">
+                            <span className="material-symbols-outlined font-light text-2xl">close</span>
+                        </button>
+                        <div className="flex items-center gap-2 opacity-40">
+                            <Logo />
+                            <span className="text-[10px] font-bold tracking-[0.3em] uppercase">HoneyDo2Done</span>
+                        </div>
+                        <div className="w-12"></div>
+                    </header>
+                    <main className="flex flex-1 flex-col items-center justify-center px-4 relative z-10">
+                        <div className="mb-24"><h1 className="text-4xl font-light tracking-tight text-white md:text-5xl text-center">What's going on?</h1></div>
+                        <div className="flex flex-col items-center">
+                            <div className="relative flex items-center justify-center">
+                                <div className="absolute size-[520px] rounded-full border border-primary/5 bg-primary/[0.01] animate-pulse-3"></div>
+                                <div className="absolute size-[400px] rounded-full border border-primary/10 bg-primary/[0.02] animate-pulse-2"></div>
+                                <div className="absolute size-[320px] rounded-full border border-primary/20 bg-primary/[0.03] animate-pulse-1"></div>
+                                <button onClick={() => navigate('/emotion-picker')} className="glow-effect flex h-60 w-60 cursor-pointer items-center justify-center rounded-full bg-primary text-background-dark soft-transition hover:scale-[1.02] active:scale-95 z-10">
+                                    <span className="material-symbols-outlined text-7xl">mic</span>
+                                </button>
+                            </div>
+                            <p className="mt-20 text-center text-[10px] font-bold tracking-[0.6em] text-white/60 uppercase">tap to speak</p>
+                        </div>
+                    </main>
+                    <footer className="flex w-full flex-col items-center justify-end pb-12 px-4 z-20">
+                        <div className="w-full max-w-md">
+                            <input className="pill-tactile w-full rounded-full border border-white/10 bg-white/[0.04] px-8 py-5 text-center text-base font-light text-white placeholder:text-white/60 focus:border-primary/40 focus:ring-0 soft-transition" placeholder="or type here..." />
+                        </div>
+                        <p className="mt-8 text-[10px] font-semibold text-white/30 tracking-[0.4em] uppercase">Therapeutic Capture Mode Active</p>
+                    </footer>
+                </div>
+            );
+        };
+
+        // --- Screen 5: Emotion Picker ---
+        const EmotionPickerPage = () => {
+            const navigate = useNavigate();
+            return (
+                <div className="layout-container flex flex-col min-h-screen bg-background-dark">
+                    <header className="flex items-center justify-between px-6 py-5 border-b border-white/5 bg-background-dark/80 backdrop-blur-xl sticky top-0 z-50">
+                        <div className="flex items-center gap-3">
+                            <Logo className="size-8 text-primary" />
+                            <h2 className="text-white text-xl font-bold tracking-tight">HoneyDo2Done</h2>
+                        </div>
+                        <button className="flex items-center justify-center rounded-full size-11 bg-white/5 text-white/70 hover:bg-white/10"><span className="material-symbols-outlined">settings</span></button>
+                    </header>
+                    <main className="flex-1 flex flex-col items-center justify-center px-8 py-16 max-w-[1200px] mx-auto w-full">
+                        <div className="mb-10 text-center">
+                            <h1 className="text-white text-4xl md:text-5xl font-extrabold tracking-tight mb-6">How's this making you feel?</h1>
+                            <p className="text-white/70 text-lg max-w-md mx-auto leading-relaxed">Checking in helps manage the mental load.</p>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-10 bg-white/[0.02] rounded-[4rem] border border-white/10">
+                            <button onClick={() => navigate('/emotion-drilldown')} className="orb-depth rounded-full flex flex-col items-center justify-center p-8 text-center gradient-unpleasant-high soft-transition hover:scale-105 h-40">
+                                <span className="text-white font-black uppercase tracking-[0.3em] text-[11px] mb-3 opacity-90">High Energy</span>
+                                <span className="text-white text-3xl font-bold">Unpleasant</span>
+                            </button>
+                            <button onClick={() => navigate('/confirm-sent')} className="orb-depth rounded-full flex flex-col items-center justify-center p-8 text-center gradient-pleasant-high soft-transition hover:scale-105 h-40">
+                                <span className="text-white font-black uppercase tracking-[0.3em] text-[11px] mb-3 opacity-90">High Energy</span>
+                                <span className="text-white text-3xl font-bold">Pleasant</span>
+                            </button>
+                            <button onClick={() => navigate('/emotion-drilldown')} className="orb-depth rounded-full flex flex-col items-center justify-center p-8 text-center gradient-unpleasant-low soft-transition hover:scale-105 h-40">
+                                <span className="text-white font-black uppercase tracking-[0.3em] text-[11px] mb-3 opacity-90">Low Energy</span>
+                                <span className="text-white text-3xl font-bold">Unpleasant</span>
+                            </button>
+                            <button onClick={() => navigate('/confirm-sent')} className="orb-depth rounded-full flex flex-col items-center justify-center p-8 text-center gradient-pleasant-low soft-transition hover:scale-105 h-40">
+                                <span className="text-white font-black uppercase tracking-[0.3em] text-[11px] mb-3 opacity-90">Low Energy</span>
+                                <span className="text-white text-3xl font-bold">Pleasant</span>
+                            </button>
+                        </div>
+                        <button onClick={() => navigate('/confirm-sent')} className="mt-12 text-white/50 hover:text-white uppercase tracking-[0.2em] text-xs font-bold">Skip for now</button>
+                    </main>
+                </div>
+            );
+        };
+
+        // --- Screen 7: Emotion Drill-down ---
+        const EmotionDrilldownPage = () => {
+            const navigate = useNavigate();
+            return (
+                <div className="bg-background-dark min-h-screen relative overflow-hidden flex flex-col">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_center,rgba(255,71,71,0.12)_0%,transparent_70%)] pointer-events-none"></div>
+                    <header className="flex items-center justify-between px-8 py-6 z-10">
+                        <button onClick={() => navigate(-1)} className="flex items-center justify-center size-10 rounded-full bg-white/5 text-white"><span className="material-symbols-outlined">arrow_back</span></button>
+                        <div className="flex items-center gap-2"><Logo /><span className="font-bold text-lg">HoneyDo2Done</span></div>
+                        <div className="size-10"></div>
+                    </header>
+                    <main className="flex-1 relative flex items-center justify-center w-full px-10 pb-24 z-10">
+                        <div className="relative w-full h-[400px]">
+                            <button className="absolute top-[20%] left-[40%] text-[#FF5F5F] text-5xl font-black">Frustrated</button>
+                            <button className="absolute top-[10%] left-[20%] text-[#FF7575] text-3xl font-extrabold">Stressed</button>
+                            <button className="absolute top-[40%] left-[10%] text-[#FF8585] text-2xl font-bold">Angry</button>
+                            <button className="absolute top-[5%] left-[60%] text-[#FF9090] text-3xl font-bold">Overwhelmed</button>
+                        </div>
+                    </main>
+                    <footer className="p-10 flex justify-center items-end relative z-20">
+                        <div className="flex items-stretch gap-6 max-w-2xl w-full">
+                            <div className="flex-1 bg-card-dark rounded-full p-6 flex items-center justify-between border border-white/10">
+                                <div>
+                                    <h2 className="text-white text-2xl font-black tracking-widest uppercase">Frustrated</h2>
+                                    <p className="text-gray-300 text-sm">Feeling upset because something isn't working</p>
+                                </div>
+                            </div>
+                            <button onClick={() => navigate('/confirm-sent')} className="px-8 rounded-full honey-gradient flex items-center justify-center text-black font-bold hover:scale-105 active:scale-95 transition-all">
+                                <span className="uppercase tracking-wider mr-2">Confirm</span>
+                                <span className="material-symbols-outlined">arrow_forward</span>
+                            </button>
+                        </div>
+                    </footer>
+                </div>
+            );
+        };
+
+        // --- Screen 9: Task Sent Confirmation ---
+        const ConfirmSentPage = () => {
+            const navigate = useNavigate();
+            return (
+                <div className="min-h-screen bg-background-dark flex flex-col items-center justify-center px-6">
+                    <header className="fixed top-0 w-full flex justify-between items-center p-6 max-w-[960px]">
+                        <div className="flex items-center gap-2"><Logo /><h2 className="font-bold">HoneyDo2Done</h2></div>
+                        <div className="size-10 rounded-full border border-white/20 bg-center bg-cover" style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuAMDHKF0vQk_7yfVq21Yi6IHPw9xuZicX1SgC2VGOoWxsSRlpLq6tzHZTD49zz-lMFJsM6KSIAwAGqKqv2yzv3WyK3jAaPYSsai9t8MihPNSZPu2LQqJ138JdQhQclXPlooUlydd57Ym-I6d2pZCeZhrNRm63mPWEy8jQ1pw9MdkY9EEEJGus773wissZrB8sBB5QgiiRat4uS0akbkbwLawIfqUXXRDU_1LSyX91_B2EQR-SJhJgjmIOUdMvykTG9D3yNkM7E7qDY")'}}></div>
+                    </header>
+                    <main className="text-center max-w-md w-full">
+                        <div className="mb-12 flex justify-center">
+                            <div className="p-6 bg-primary/20 rounded-full border border-primary/40">
+                                <span className="material-symbols-outlined text-7xl text-primary fill">check_circle</span>
+                            </div>
+                        </div>
+                        <h1 className="text-4xl font-bold mb-3">Sent to Jake</h1>
+                        <p className="text-xl text-zinc-400 mb-12">Fix the kitchen sink</p>
+                        <div className="bg-card-dark rounded-2xl p-8 border border-white/10 mb-8 text-left">
+                            <div className="flex items-center gap-3 mb-4">
+                                <div className="size-10 rounded-full bg-cover" style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3bwAylNGXWPrNfjBvlGet-G5LXFqTAJB4m7RpoMgHjgfDomga8idhTdLFjkyCPFPREZLuWW0Xc2gpXISK1CfmcFpMzTsr50CFa64BYdNxfY8xEgRcRxnCPRgg8SB2zOgeXRoeAmBZrd3QqKrVbQsShU1w4IW7PhXod4ugJgS0Huxa_NyqJ7wiOa9QFWApIlVzi-dtwyKElUughnOZpw5djG8zcoLHc3nMAEQAWryEeGwtI0fm3HGPFW52j0cP-OMZcluoszviEEQ")'}}></div>
+                                <p className="text-zinc-300 font-medium">Jake might ask:</p>
+                            </div>
+                            <p className="text-2xl font-semibold mb-6">"Have you tried turning it off and on?"</p>
+                            <div className="flex gap-4">
+                                <button className="flex-1 bg-white/5 rounded-full py-3 font-semibold border border-white/10 hover:bg-white/10" onClick={() => navigate('/dashboard')}>Already tried that</button>
+                                <button className="flex-1 bg-white/5 rounded-full py-3 font-semibold border border-white/10 hover:bg-white/10" onClick={() => navigate('/dashboard')}>I'll try now</button>
+                            </div>
+                        </div>
+                        <button onClick={() => navigate('/dashboard')} className="text-honey-gold font-bold px-10 py-3 rounded-full border border-honey-gold/40 hover:bg-honey-gold/10 transition-all flex items-center gap-2 mx-auto">
+                            Done <span className="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </main>
+                </div>
+            );
+        };
+
+        // --- Screen 10: Dashboard ---
+        const DashboardPage = () => {
+            const navigate = useNavigate();
+            return (
+                <div className="flex h-screen overflow-hidden bg-background-dark">
+                    <aside className="w-72 border-r border-white/10 bg-background-dark p-6 flex flex-col justify-between hidden md:flex">
+                        <div className="flex flex-col gap-10">
+                            <div className="flex items-center gap-4 p-2">
+                                <div className="bg-primary rounded-lg p-2 shadow-lg"><span className="material-symbols-outlined text-black font-bold fill">check_circle</span></div>
+                                <div><h1 className="text-white text-lg font-extrabold leading-none">HoneyDo2Done</h1><p className="text-zinc-500 text-[10px] uppercase tracking-widest mt-1">Household Manager</p></div>
+                            </div>
+                            <nav className="flex flex-col gap-2">
+                                <div className="flex items-center gap-3 px-5 py-3 rounded-full bg-primary/15 text-primary"><span className="material-symbols-outlined fill">home</span><span className="font-bold">Home</span></div>
+                                <div className="flex items-center gap-3 px-5 py-3 rounded-full text-zinc-500 hover:text-white"><span className="material-symbols-outlined">format_list_bulleted</span><span className="font-semibold">Tasks</span></div>
+                                <div className="flex items-center gap-3 px-5 py-3 rounded-full text-zinc-500 hover:text-white"><span className="material-symbols-outlined">person</span><span className="font-semibold">Profile</span></div>
+                            </nav>
+                        </div>
+                        <button onClick={() => navigate('/voice-capture')} className="w-full bg-primary text-black font-bold rounded-full py-4 flex justify-center items-center gap-2"><span className="material-symbols-outlined">add</span><span>New Task</span></button>
+                    </aside>
+                    <main className="flex-1 flex flex-col overflow-y-auto p-8 md:p-12">
+                        <div className="max-w-4xl w-full mx-auto">
+                            <header className="mb-10"><h1 className="text-white text-5xl font-extrabold mb-2">Hey, Jen</h1><p className="text-zinc-500 text-xl">Tuesday, Oct 24</p></header>
+                            <section className="mb-10">
+                                <div className="flex justify-between items-center mb-4"><h2 className="text-white text-xl font-bold">My Plate</h2><span className="bg-primary text-black text-xs font-black px-3 py-1 rounded-full">1</span></div>
+                                <div className="bg-card-dark rounded-2xl p-6 border border-white/5 relative group cursor-pointer" onClick={() => navigate('/partner-receipt')}>
+                                    <div className="flex justify-between items-start mb-6">
+                                        <div className="flex gap-4">
+                                            <div className="size-14 rounded-full border-2 border-primary/30 overflow-hidden"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUl9AIr5him5PpATku0uDOh-hh07TcHNutLPLAGRygC1gMVPRrw476fvCq6lNEHTcBn6ERg3MqCnwI5AE543NhHR9LEY7aDFkcDFcs2QAkQyFtQjBRWtRlr0wPT4OZKpZrHmrwhe5QnKC8bBoZ-_Is_DdDPflOp8pQz0DXVhXsoCrRXqcu7Xr_o51eD_UEfdCrKdt3RdHFakTpCZtW93YkA9QoVFS00AFQHXOw8uc95xveeYKXnCvVezI-MNamDshOhMyj9IzOego" className="w-full h-full object-cover"/></div>
+                                            <div><h3 className="text-lg font-bold group-hover:text-primary transition-colors">Fix kitchen sink</h3><p className="text-zinc-500 text-xs font-bold uppercase">Plumbing • High Priority</p></div>
+                                        </div>
+                                        <span className="text-zinc-500 text-sm font-bold bg-white/5 px-3 py-1 rounded-full">2d</span>
+                                    </div>
+                                    <div className="flex gap-3 border-t border-white/10 pt-4">
+                                        <button className="flex-1 bg-primary text-black font-extrabold py-3 rounded-full text-sm">Send update</button>
+                                        <button onClick={(e) => { e.stopPropagation(); navigate('/help-selection'); }} className="flex-1 bg-white/10 text-white font-bold py-3 rounded-full text-sm border border-white/10">Need help</button>
+                                    </div>
+                                </div>
+                            </section>
+                            <section>
+                                <div className="flex justify-between items-center mb-4"><h2 className="text-white text-xl font-bold">Their Plate</h2><span className="bg-white/10 text-white text-xs font-black px-3 py-1 rounded-full">3</span></div>
+                                <div className="bg-card-dark rounded-2xl p-6 border border-white/5 flex justify-between items-center mb-4" onClick={() => navigate('/celebration')}>
+                                    <div className="flex gap-4 items-center">
+                                        <div className="size-12 rounded-full overflow-hidden border border-white/10"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-6B1Rnd8R6pS2y-KI93Jk0psekTBKIg7cYf3ZJBB2nm_gl8XQW0J00Geq4gcdS_O9tUaC7OdXh5PRm1vSzLcoJdP7VwKbCoTfeTIGqTtSNDp23OiZAmUw4_wSPXOpSynyAgzwhH2u3lRqAcOARJrhNLC4kgv9Ah5BmTTJC_7HSElHcfYTc-2Cyyehel0QJb4DfuktzCS2yaDFqU1rGqzp9GuVogAli4JECZU_BtGOYsXEWDmVQaYZoIqFiuQGmnWp9TTcujECEoY" className="w-full h-full object-cover"/></div>
+                                        <div><h3 className="font-bold">Mow the back lawn</h3><p className="text-zinc-500 text-xs uppercase">Outdoor • Active</p></div>
+                                    </div>
+                                    <span className="text-zinc-500 text-sm font-bold">4h</span>
+                                </div>
+                            </section>
+                        </div>
+                    </main>
+                    {/* Mobile Bottom Nav */}
+                    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 w-full max-w-sm px-4 z-20 md:hidden">
+                        <nav className="bg-card-dark/90 border border-white/20 shadow-2xl rounded-full px-4 flex items-center justify-around backdrop-blur-xl h-20">
+                            <button className="flex flex-col items-center text-primary"><span className="material-symbols-outlined fill">home</span><span className="text-[10px] font-black uppercase">Home</span></button>
+                            <button onClick={() => navigate('/voice-capture')} className="bg-primary w-16 h-16 rounded-full flex items-center justify-center -translate-y-8 border-[6px] border-background-dark shadow-xl"><span className="material-symbols-outlined text-black text-3xl font-black">add</span></button>
+                            <button className="flex flex-col items-center text-zinc-500"><span className="material-symbols-outlined">person</span><span className="text-[10px] font-black uppercase">Profile</span></button>
+                        </nav>
+                    </div>
+                </div>
+            );
+        };
+
+        // --- Screen 6: Help Selection ---
+        const HelpSelectionPage = () => {
+            const navigate = useNavigate();
+            return (
+                <div className="min-h-screen bg-background-dark relative flex flex-col items-center">
+                    <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,rgba(234,164,19,0.08)_0%,transparent_70%)] pointer-events-none"></div>
+                    <header className="w-full flex justify-between items-center px-6 py-4 max-w-[960px] border-b border-white/5 z-10">
+                        <div className="flex items-center gap-4">
+                            <button onClick={() => navigate(-1)} className="flex items-center justify-center size-10 rounded-full bg-white/5 text-primary"><span className="material-symbols-outlined">arrow_back</span></button>
+                            <div className="flex items-center gap-2"><Logo className="size-6 text-honey-gold" /><h2 className="font-bold">HoneyDo2Done</h2></div>
+                        </div>
+                    </header>
+                    <main className="max-w-[640px] w-full px-6 py-16 z-10 text-center">
+                        <h1 className="text-4xl md:text-5xl font-black mb-4">What's the holdup?</h1>
+                        <p className="text-zinc-400 text-lg mb-12">It's okay to need a hand. Let's get this task moving again.</p>
+                        <div className="flex flex-col gap-4">
+                            {[
+                                { title: "I don't know how to diagnose this", desc: "Help me figure out what's wrong", icon: "help_center" },
+                                { title: "I don't have the right tools", desc: "Help me find what I need", icon: "build" },
+                                { title: "I need another pair of hands", desc: "This is a two-person job", icon: "group" }
+                            ].map((item, i) => (
+                                <button key={i} onClick={() => navigate('/honest-response')} className="flex items-center justify-between p-5 bg-card-dark rounded-full border border-white/10 hover:border-honey-gold/40 hover:scale-[1.01] transition-all group text-left">
+                                    <div className="flex items-center gap-6">
+                                        <div className="size-14 rounded-full bg-honey-gold/15 text-honey-gold flex items-center justify-center group-hover:bg-honey-gold group-hover:text-black transition-colors"><span className="material-symbols-outlined text-3xl">{item.icon}</span></div>
+                                        <div><p className="text-xl font-extrabold">{item.title}</p><p className="text-zinc-500">{item.desc}</p></div>
+                                    </div>
+                                    <span className="material-symbols-outlined text-zinc-600 mr-2">chevron_right</span>
+                                </button>
+                            ))}
+                        </div>
+                    </main>
+                </div>
+            );
+        };
+
+        // --- Screen 8: Honest Response ---
+        const HonestResponsePage = () => {
+            const navigate = useNavigate();
+            return (
+                <div className="min-h-screen bg-[radial-gradient(circle_at_50%_40%,rgba(238,43,75,0.15)_0%,rgba(13,13,13,1)_75%)] flex flex-col items-center px-4">
+                    <header className="w-full max-w-[560px] py-6 flex items-center gap-4">
+                        <button onClick={() => navigate(-1)} className="size-11 rounded-full bg-card-dark flex items-center justify-center border border-white/10"><span className="material-symbols-outlined">arrow_back</span></button>
+                        <div className="flex items-center gap-2"><Logo className="text-[#ee2b4b]" /><h2 className="font-bold">HoneyDo2Done</h2></div>
+                    </header>
+                    <main className="max-w-[560px] w-full py-10 text-center">
+                        <h1 className="text-3xl font-extrabold mb-2">Help us understand</h1>
+                        <p className="text-zinc-400 mb-10">No judgment — this helps us find the right solution</p>
+                        <div className="flex flex-col gap-4 text-left">
+                            {[
+                                { title: "I don't know where to start", icon: "help_outline" },
+                                { title: "I don't have time for this", icon: "schedule" },
+                                { title: "This feels risky or scary", icon: "warning_amber" },
+                                { title: "I just don't want to", icon: "sentiment_dissatisfied" }
+                            ].map((item, i) => (
+                                <button key={i} onClick={() => navigate('/dashboard')} className="flex items-center gap-4 p-4 bg-card-dark rounded-full border border-white/20 hover:border-[#ee2b4b]/50 group transition-all">
+                                    <div className="size-11 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#ee2b4b]/20"><span className="material-symbols-outlined">{item.icon}</span></div>
+                                    <span className="flex-1 font-semibold">{item.title}</span>
+                                    <span className="material-symbols-outlined text-zinc-600 pr-2">chevron_right</span>
+                                </button>
+                            ))}
+                        </div>
+                        <button onClick={() => navigate('/dashboard')} className="mt-12 text-zinc-500 hover:text-white underline decoration-zinc-700">Skip for now</button>
+                    </main>
+                </div>
+            );
+        };
+
+        // --- Screen 11: Partner Receipt ---
+        const PartnerReceiptPage = () => {
+            const navigate = useNavigate();
+            return (
+                <div className="min-h-screen bg-background-dark flex flex-col items-center">
+                    <header className="w-full flex justify-center py-4 border-b border-white/5 sticky top-0 bg-background-dark/80 backdrop-blur-md z-50">
+                        <div className="w-full max-w-[960px] px-6 flex items-center justify-between">
+                            <button onClick={() => navigate(-1)} className="size-12 rounded-xl bg-card-dark flex items-center justify-center"><span className="material-symbols-outlined">arrow_back</span></button>
+                            <div className="flex items-center gap-2"><Logo className="text-accent-teal" /><span className="font-extrabold">HoneyDo2Done</span></div>
+                            <div className="w-12"></div>
+                        </div>
+                    </header>
+                    <main className="max-w-[800px] w-full px-6 py-12">
+                        <div className="flex flex-wrap items-center gap-4 mb-6">
+                            <div className="flex items-center gap-3">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEK1CbqAg-s-e83goV1luNHUPI2WgVkxtTBVpGr89T0psJwC1jyykAQDd5GQsVs9FRjgOcpnW7r695aNlOYE9FPA6VXfCG7mPO4r-PH1sz2bmu1LMonqmdAJzZTHhenU2i8kfYc3w4BARMtKzB78aKIlwX35B4skToBRKnCwtdw8bdzrKyTnPkqvFuSBcIAeJnKO3bE3YOSp450EsEugA7OLnKgQqKytFrwwL8xjqxaIAwx4W7ZCVJoUHPIl9Dd7IaAC7DUQf6LgQ" className="size-8 rounded-full border border-white/20"/>
+                                <p className="text-zinc-500 font-semibold">from Jen • 2 hours ago</p>
+                            </div>
+                            <div className="bg-[#FF4D4D] px-4 py-1 rounded-full animate-pulse shadow-[0_0_12px_rgba(255,107,107,0.4)]"><span className="text-white font-bold text-xs uppercase">Important to her</span></div>
+                        </div>
+                        <h1 className="text-5xl lg:text-6xl font-black mb-8">Kitchen faucet dripping</h1>
+                        <div className="bg-card-dark rounded-2xl p-6 border border-zinc-800 flex flex-col md:flex-row gap-8 mb-12">
+                            <div className="w-full md:w-64 aspect-square bg-cover bg-center rounded-xl border border-white/10" style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCziDTSXl_220TYKLDhIZtthecAyCmdgzSB__1mEYL6sDNevNrfPnRy_xcOT7JDrtHvwcdNfFG-MhAaHc6yAP1HvWKXfSqqOSXVDn3zeTuOoxlqjxZjXb-LfuewgUAjgpDTXVmCKqveZGpIn3J-1nlXiv7n2hIlM1ZATAImxJqKRicrz69-H8zU8Xm_cygngCefCqQfKjlRz_hTbqsbzrkuM_mQJClmDOMpO3F-8iVSx90kV4UJlhb-Unks9m14AxPFwF6stcOxInk")'}}></div>
+                            <div className="flex-1 flex flex-col justify-center">
+                                <p className="text-2xl font-medium leading-relaxed">The kitchen faucet has a steady drip that's getting worse. Needs a washer replacement. I tried tightening but it didn't help.</p>
+                            </div>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <button onClick={() => navigate('/celebration')} className="btn-pressable-green py-10 rounded-full flex flex-col items-center gap-4 text-black font-black text-2xl"><span className="material-symbols-outlined text-5xl fill">check_circle</span>I got this</button>
+                            <button onClick={() => navigate('/help-selection')} className="btn-pressable-gold py-10 rounded-full flex flex-col items-center gap-4 text-black font-black text-2xl"><span className="material-symbols-outlined text-5xl fill">group</span>Need help</button>
+                            <button onClick={() => navigate('/dashboard')} className="border-2 border-coral-red text-coral-red py-10 rounded-full flex flex-col items-center gap-4 font-black text-2xl"><span className="material-symbols-outlined text-5xl">cancel</span>Not me</button>
+                        </div>
+                    </main>
+                </div>
+            );
+        };
+
+        // --- Screen 2: Celebration ---
+        const CelebrationPage = () => {
+            const navigate = useNavigate();
+            return (
+                <div className="min-h-screen bg-background-dark relative flex flex-col items-center justify-center p-6 text-center">
+                    <div className="fixed inset-0 bg-[radial-gradient(circle_at_top,rgba(78,205,196,0.15)_0%,transparent_70%)] pointer-events-none"></div>
+                    <header className="fixed top-0 w-full max-w-[960px] flex justify-between items-center p-6">
+                        <div className="flex items-center gap-2"><Logo /><h2 className="font-bold">HoneyDo2Done</h2></div>
+                        <div className="flex gap-4">
+                            <button className="size-11 rounded-full bg-white/5 flex items-center justify-center"><span className="material-symbols-outlined">notifications</span></button>
+                            <button className="size-11 rounded-full bg-white/5 flex items-center justify-center"><span className="material-symbols-outlined">person</span></button>
+                        </div>
+                    </header>
+                    <main className="max-w-[640px] w-full mt-12">
+                        <h1 className="text-6xl font-bold mb-4">Nice work!</h1>
+                        <p className="text-xl text-zinc-400 mb-12">One more off the list.</p>
+                        <div className="p-12 bg-card-dark rounded-3xl border border-accent-teal/30 shadow-[0_0_30px_rgba(78,205,196,0.2)] mb-12">
+                            <div className="size-20 rounded-full bg-accent-teal/10 flex items-center justify-center border border-accent-teal/30 mx-auto mb-6">
+                                <span className="material-symbols-outlined text-accent-teal text-5xl fill">check_circle</span>
+                            </div>
+                            <p className="text-accent-teal text-xs font-bold uppercase tracking-widest mb-2">Completed</p>
+                            <h2 className="text-3xl font-bold mb-2">Kitchen faucet dripping</h2>
+                            <p className="text-zinc-500">Completed in 3 days</p>
+                        </div>
+                        <div className="flex flex-col gap-4">
+                            <button onClick={() => navigate('/dashboard')} className="honey-gradient w-full py-5 rounded-full text-black font-black text-xl shadow-lg">Send update to Jen</button>
+                            <button onClick={() => navigate('/dashboard')} className="w-full py-5 rounded-full text-white font-bold border border-white/30 hover:bg-white/5">Just mark it done</button>
+                        </div>
+                    </main>
+                </div>
+            );
+        };
+
+        const App = () => {
+            return (
+                <MemoryRouter>
+                    <Routes>
+                        <Route path="/" element={<DashboardPage />} />
+                        <Route path="/dashboard" element={<DashboardPage />} />
+                        <Route path="/voice-capture" element={<VoiceCapturePage />} />
+                        <Route path="/emotion-picker" element={<EmotionPickerPage />} />
+                        <Route path="/emotion-drilldown" element={<EmotionDrilldownPage />} />
+                        <Route path="/confirm-sent" element={<ConfirmSentPage />} />
+                        <Route path="/help-selection" element={<HelpSelectionPage />} />
+                        <Route path="/honest-response" element={<HonestResponsePage />} />
+                        <Route path="/partner-receipt" element={<PartnerReceiptPage />} />
+                        <Route path="/celebration" element={<CelebrationPage />} />
+                    </Routes>
+                </MemoryRouter>
+            );
+        };
+
+        const root = createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>

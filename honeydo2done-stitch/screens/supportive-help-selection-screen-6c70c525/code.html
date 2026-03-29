@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Supportive Help Selection Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#eca413",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#0F0F0F",
+                        "card-dark": "#1A1A1A",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .amber-glow {
+            background: radial-gradient(circle at center, rgba(234, 164, 19, 0.08) 0%, rgba(15, 15, 15, 0) 70%);
+        }
+        .card-hover:hover {
+            border-color: #eca413;
+            background-color: #242424;
+            transform: translateY(-2px);
+            transition: all 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white min-h-screen relative overflow-x-hidden">
+<!-- Ambient Glow Background -->
+<div class="fixed inset-0 amber-glow pointer-events-none"></div>
+<div class="relative flex flex-col min-h-screen">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between px-6 py-4 md:px-40 border-b border-white/5">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-white/5 hover:bg-white/10 text-primary transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex items-center gap-2">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-tight">HoneyDo2Done</h2>
+</div>
+</div>
+<div class="hidden md:block">
+<span class="text-white/40 text-sm">Task: Fix kitchen faucet</span>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col items-center justify-center px-4 py-12 max-w-[960px] mx-auto w-full">
+<!-- Headline -->
+<div class="text-center mb-10">
+<h1 class="text-white tracking-tight text-4xl md:text-5xl font-bold leading-tight pb-3">What's the holdup?</h1>
+<p class="text-white/60 text-lg max-w-md mx-auto">It's okay to need a hand. Let's figure out how to get this task moving again.</p>
+</div>
+<!-- Card Selection Stack -->
+<div class="flex flex-col gap-4 w-full max-w-[640px]">
+<!-- Card 1: Diagnosis -->
+<div class="p-0.5 rounded-xl bg-gradient-to-b from-white/10 to-transparent">
+<div class="card-hover flex items-center justify-between gap-6 rounded-[calc(0.75rem-1px)] bg-card-dark p-6 border border-white/5 cursor-pointer group">
+<div class="flex flex-row items-center gap-6 flex-1">
+<div class="flex items-center justify-center size-14 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-black transition-all">
+<span class="material-symbols-outlined text-3xl">help_center</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-white text-xl font-bold leading-tight">I don't know how to diagnose this</p>
+<p class="text-white/50 text-base font-normal leading-normal">Help me figure out what's wrong</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-white/20 group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Card 2: Tools -->
+<div class="p-0.5 rounded-xl bg-gradient-to-b from-white/10 to-transparent">
+<div class="card-hover flex items-center justify-between gap-6 rounded-[calc(0.75rem-1px)] bg-card-dark p-6 border border-white/5 cursor-pointer group">
+<div class="flex flex-row items-center gap-6 flex-1">
+<div class="flex items-center justify-center size-14 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-black transition-all">
+<span class="material-symbols-outlined text-3xl">build</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-white text-xl font-bold leading-tight">I don't have the right tools</p>
+<p class="text-white/50 text-base font-normal leading-normal">Help me find what I need</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-white/20 group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Card 3: Assistance -->
+<div class="p-0.5 rounded-xl bg-gradient-to-b from-white/10 to-transparent">
+<div class="card-hover flex items-center justify-between gap-6 rounded-[calc(0.75rem-1px)] bg-card-dark p-6 border border-white/5 cursor-pointer group">
+<div class="flex flex-row items-center gap-6 flex-1">
+<div class="flex items-center justify-center size-14 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-black transition-all">
+<span class="material-symbols-outlined text-3xl">group</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-white text-xl font-bold leading-tight">I need another pair of hands</p>
+<p class="text-white/50 text-base font-normal leading-normal">This is a two-person job</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-white/20 group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Support Footer -->
+<div class="mt-12 text-center">
+<button class="text-white/40 hover:text-white text-sm font-medium transition-colors underline underline-offset-4 decoration-white/10">
+                    Actually, I'll try to figure it out myself
+                </button>
+</div>
+</main>
+<!-- Visual Decoration -->
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl opacity-20 pointer-events-none overflow-hidden h-64">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="Soft abstract golden light pattern reflecting on a dark surface" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBaw5dkn4vSNU84CkUn3gUB6X2CXOYo3SBewJ0DXAm-iHdI8uwbLn3jwEn873fFSl8M2kh3tw80skVfs-iNxnF675OnYZzY1BdZN3SdPHbIKiDxxmvDx-RB2hQQFf-z72whXenZCJY1YBq_GFEJ50qsnPZPKIutAMZkWFxozgtWcr7t2JwkXREMjKQg1Owpb8Fv5q9xfmUalhz4lyCVWxFvOEAoxrZyjCMXtuwALVZxx3S0AzVTvutzH12nZF2m8oQ_2OiXafr4iB8");'>
+</div>
+</div>
+</div>
+</body></html>

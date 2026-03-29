@@ -1,0 +1,30 @@
+{
+    "screenshot": {
+        "name": "projects/6015041271196470309/files/490f519bfc5d46e6ab85f7e61a799da3",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ugXyRkCe8EG2kZDBop8gTtvCk9YDnr7B3rDx44hrm4Rc5ksjeAF97AEms2pLwQ-iPloGDumTnJsCGNWzcjtspJgNGpux_bJKpkENnvW2i_lvW1dyThQCdT6PR4XlBrhcGTlrmBSQVA0iPqemmA2DbMmD4DHPfONvjtEJo5HvhmhYKonoTCaYKbPodwTNbs6Ojp24t91c1lyA75ocNtlDwTG2aJnsVeaEMUkRKAL82PnlqIhV16IoxPo4w"
+    },
+    "htmlCode": {
+        "name": "projects/6015041271196470309/files/a11b57b4291745c993fb5f7ff82cf2b9",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2NkNjdjYzg2OGJmYjRhNDNiYjMxZTQ1MjViZjlhYzY3EgsSBxCA3cuCnB8YAZIBIwoKcHJvamVjdF9pZBIVQhM2MDE1MDQxMjcxMTk2NDcwMzA5&filename=&opi=89354086"
+    },
+    "id": "1ecfd31670f64d78ab4012e36aca95b5",
+    "generatedBy": "figaro_agent",
+    "width": "2560",
+    "height": "3510",
+    "title": "Task Details & Communication",
+    "prompt": "Title: Task Details & Communication\nContext: Household task management app for couples called HoneyDo2Done with a modern, dark-themed aesthetic.\nDescription of the screen: A detailed task view screen for HoneyDo2Done. The screen shows a specific task, e.g., 'Fix the leaky faucet in the guest bath'. It includes a large image or placeholder area with rounded corners. Below, a simple chat-like feed for updates between partners (e.g., 'Ordered the part' or 'Will do this Saturday'). Use soft teal green for completion status. The background is #0D0D0D, with content in dark gray cards (#1A1A1A). Elegant, therapeutic design with generous spacing.\nPlatform: web\nForm factor: desktop",
+    "name": "projects/6015041271196470309/screens/1ecfd31670f64d78ab4012e36aca95b5",
+    "theme": {
+        "colorMode": "DARK",
+        "font": "INTER",
+        "roundness": "ROUND_EIGHT",
+        "customColor": "#f5a524",
+        "saturation": 3
+    },
+    "deviceType": "DESKTOP",
+    "screenType": "DESIGN",
+    "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+    }
+}

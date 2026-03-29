@@ -1,0 +1,30 @@
+{
+    "screenshot": {
+        "name": "projects/6015041271196470309/files/4bbf425839d44be7abe50e15a2146b2d",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ujQewlX2aYObGz1Agr9H3wyVQ-tUAkWxotFlWWL9uv9hoqdmufvz1d4bjSZj1A-CI3e7cX66XQ18pPfHI5gYEUnreA_wsgrmVMERHLusvCSepMBggK6Fvymm6yGFcHpRaU56Bzxmfa49MTgD7qQYYyyy5JSH6rcHJWii0b8AqLaqsHcsHTwlCyrvToM-vBcDEwTmKRV1w-WHzzSsdwlpeJ9dyS9uu0-iWspeb7GXTiMqAYH_iycEkfN0A"
+    },
+    "htmlCode": {
+        "name": "projects/6015041271196470309/files/e7937263b2dc44aabc9e209a516b9587",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2U2OGQ1NTY3ZmJmMzQ4Y2NiODBiOTVjNGM1NWFhNDBhEgsSBxCA3cuCnB8YAZIBIwoKcHJvamVjdF9pZBIVQhM2MDE1MDQxMjcxMTk2NDcwMzA5&filename=&opi=89354086"
+    },
+    "id": "001ba47ac2324b50b87312bd710484b3",
+    "generatedBy": "figaro_agent",
+    "width": "2560",
+    "height": "2870",
+    "title": "Share Your Win Screen",
+    "prompt": "Title: Share Your Win Screen\nContext: Social sharing screen for HoneyDo2Done, allowing users to celebrate completed tasks and partner efforts.\nDescription of the screen: A premium social sharing screen with a deep charcoal black (#0D0D0D) background. At the top, 'Share this win' in bold white text. The main content is a vertical list of three distinct 'Share Format' cards, each with 12px rounded corners and a dark gray (#1A1A1A) background with a subtle border. Option 1 ('Celebrate the task') shows a minimal preview: 'Kitchen faucet \u2713 \\u2014 finally fixed!'. Option 2 ('Celebrate Jake') shows: 'Jake knocked out the kitchen faucet \\ud83d\\udd27' along with Jake's avatar. Option 3 ('Share the journey') shows: '3 days from frustrated \\ud83d\\ude24 to relieved \\ud83d\\ude0a' using the app's emotion icons. Each preview card features a small, elegant HoneyDo2Done logo at the bottom corner. Below these options is a horizontal row of standard share destination icons (Messages, Instagram, Facebook, Copy Link) styled in muted colors with rounded containers. The vibe is one of pride, positive reinforcement, and celebration.\nPlatform: web\nForm factor: desktop",
+    "name": "projects/6015041271196470309/screens/001ba47ac2324b50b87312bd710484b3",
+    "theme": {
+        "colorMode": "DARK",
+        "font": "SPLINE_SANS",
+        "roundness": "ROUND_TWELVE",
+        "customColor": "#0df26c",
+        "saturation": 3
+    },
+    "deviceType": "DESKTOP",
+    "screenType": "DESIGN",
+    "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+    }
+}

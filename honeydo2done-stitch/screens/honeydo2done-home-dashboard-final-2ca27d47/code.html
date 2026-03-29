@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HoneyDo2Done Home Dashboard Final</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f5a524",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#0D0D0D",
+                        "card-dark": "#1A1A1A",
+                        "muted-gray": "#9CA3AF", // Accessible against #0D0D0D (4.47:1)
+                        "text-accessible": "#E5E7EB", // High contrast light gray
+                        "success-teal": "#4ECDC4"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }.text-muted-gray {
+            color: #A1A1AA;}
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-accessible transition-colors duration-300">
+<div class="flex h-screen overflow-hidden">
+<aside class="w-64 border-r border-white/5 bg-background-dark p-6 flex flex-col justify-between hidden md:flex">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-3">
+<div class="bg-primary rounded-lg p-2">
+<span class="material-symbols-outlined text-black font-bold">check_circle</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-white text-base font-extrabold leading-none tracking-tight">HoneyDo2Done</h1>
+<p class="text-muted-gray text-xs font-normal">Household Manager</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined fill">home</span>
+<span class="text-sm font-bold">Home</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-muted-gray hover:bg-white/5 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">format_list_bulleted</span>
+<span class="text-sm font-normal">All Tasks</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-muted-gray hover:bg-white/5 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-sm font-normal">Calendar</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-muted-gray hover:bg-white/5 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-sm font-normal">Profile</span>
+</a>
+</nav>
+</div>
+<button class="w-full bg-primary text-black font-extrabold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined">add</span>
+<span>New Task</span>
+</button>
+</aside>
+<main class="flex-1 flex flex-col overflow-y-auto">
+<div class="max-w-3xl w-full mx-auto px-6 py-10">
+<header class="mb-10">
+<h1 class="text-white text-4xl font-extrabold tracking-tight">Hey, Jen</h1>
+<p class="text-muted-gray text-lg mt-1 font-normal">Tuesday, Oct 24</p>
+</header>
+<div class="flex flex-col gap-8">
+<section>
+<div class="flex items-center justify-between px-2 mb-4">
+<div class="flex items-center gap-3">
+<h2 class="text-white text-xl font-bold tracking-tight">My Plate</h2>
+<span class="bg-primary text-black text-xs font-extrabold px-2 py-0.5 rounded-full">1</span>
+</div>
+<span class="material-symbols-outlined text-muted-gray">expand_more</span>
+</div>
+<div class="bg-card-dark rounded-xl p-4 flex items-center justify-between border border-white/5 hover:border-white/10 transition-all group cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20">
+<img alt="Jen's profile avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUl9AIr5him5PpATku0uDOh-hh07TcHNutLPLAGRygC1gMVPRrw476fvCq6lNEHTcBn6ERg3MqCnwI5AE543NhHR9LEY7aDFkcDFcs2QAkQyFtQjBRWtRlr0wPT4OZKpZrHmrwhe5QnKC8bBoZ-_Is_DdDPflOp8pQz0DXVhXsoCrRXqcu7Xr_o51eD_UEfdCrKdt3RdHFakTpCZtW93YkA9QoVFS00AFQHXOw8uc95xveeYKXnCvVezI-MNamDshOhMyj9IzOego"/>
+</div>
+<div>
+<h3 class="text-white text-base font-semibold group-hover:text-primary transition-colors">Fix kitchen sink</h3>
+<p class="text-muted-gray text-sm font-normal">Plumbing • High Priority</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-muted-gray text-sm font-normal">2d</span>
+</div>
+</div>
+</section>
+<section>
+<div class="flex items-center justify-between px-2 mb-4">
+<div class="flex items-center gap-3">
+<h2 class="text-white text-xl font-bold tracking-tight">Their Plate</h2>
+<span class="bg-white/20 text-white text-xs font-extrabold px-2 py-0.5 rounded-full">3</span>
+</div>
+<span class="material-symbols-outlined text-muted-gray">expand_more</span>
+</div>
+<div class="flex flex-col gap-3">
+<div class="bg-card-dark rounded-xl p-4 flex items-center justify-between border border-white/5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white/10">
+<img alt="Partner's profile avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-6B1Rnd8R6pS2y-KI93Jk0psekTBKIg7cYf3ZJBB2nm_gl8XQW0J00Geq4gcdS_O9tUaC7OdXh5PRm1vSzLcoJdP7VwKbCoTfeTIGqTtSNDp23OiZAmUw4_wSPXOpSynyAgzwhH2u3lRqAcOARJrhNLC4kgv9Ah5BmTTJC_7HSElHcfYTc-2Cyyehel0QJb4DfuktzCS2yaDFqU1rGqzp9GuVogAli4JECZU_BtGOYsXEWDmVQaYZoIqFiuQGmnWp9TTcujECEoY"/>
+</div>
+<div>
+<h3 class="text-white text-base font-semibold">Mow the back lawn</h3>
+<p class="text-muted-gray text-sm font-normal">Outdoor • Active</p>
+</div>
+</div>
+<span class="text-muted-gray text-sm font-normal">4h</span>
+</div>
+<div class="bg-card-dark rounded-xl p-4 flex items-center justify-between border border-white/5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white/10">
+<img alt="Partner's profile avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC4lS1LyrvRyXUaN2okn7fdUsUM4fPwm-MyojCzzTR_sE4es1Oic8vbBRav6hKdD2qkYEzEV1a1LZYdnIt_1oRzUEIwZN2fTBazQrq4aYU5FebIveFTTYFxTPFUB-t5m05hQE9Pq4pNpYI5fgn1LyqQifGxvtwpbXWe7plF6kHhe7quCkT4xoGfxyFn0d4jxhvaBHRSHrm88AJAv7FlmqnTDK35sQGutkf562Yptbcr4T7z9FWtiFZnUvbk0O7RM0C4to6xZVqhrc"/>
+</div>
+<div>
+<h3 class="text-white text-base font-semibold">Pick up dry cleaning</h3>
+<p class="text-muted-gray text-sm font-normal">Errands • Pending</p>
+</div>
+</div>
+<span class="text-muted-gray text-sm font-normal">1d</span>
+</div>
+<div class="bg-card-dark rounded-xl p-4 flex items-center justify-between border border-white/5 opacity-90">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white/10">
+<img alt="Partner's profile avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWgeoGHiF3FWviWFeokXW4Or0GoeFs1HdZ84HWPWtJaudKnk9jkoAeGWnUvD3h7SVcHJL-zYRbCUlqTwvGS-w-6_k8hFmg8mK6bSSS-BJqNqcWm1peQOAxg9M13AVf1GJg7s5f82k_Om9RPM55daAUFi9RniZtUQa8N_ImZDHMRzhxaaVYQu9SfL18CDAnlpx-xQilkyZ64-7c5x0iOQJVnRWuDKyCYW8n-x96HYQ4T5Ka4u1a1F4M4OiDs9OajgMVcPg6y1hzpOI"/>
+</div>
+<div>
+<h3 class="text-white text-base font-semibold">Change HVAC filter</h3>
+<p class="text-muted-gray text-sm font-normal">Maintenance • Overdue</p>
+</div>
+</div>
+<span class="text-red-400 text-sm font-extrabold">5d!</span>
+</div>
+</div>
+</section>
+<section>
+<div class="flex items-center justify-between px-2 mb-4">
+<div class="flex items-center gap-3">
+<h2 class="text-white/70 text-xl font-bold tracking-tight">Done</h2>
+<span class="bg-success-teal/20 text-success-teal text-xs font-extrabold px-2 py-0.5 rounded-full">15</span>
+</div>
+<span class="material-symbols-outlined text-muted-gray">expand_less</span>
+</div>
+<div class="flex flex-col gap-3">
+<div class="bg-card-dark/40 rounded-xl p-4 flex items-center justify-between border-l-4 border-success-teal">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-success-teal/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-success-teal">check_circle</span>
+</div>
+<div>
+<h3 class="text-white/60 text-base font-semibold line-through">Buy groceries for dinner</h3>
+<p class="text-muted-gray/70 text-xs italic font-normal">Completed by Jen</p>
+</div>
+</div>
+<span class="text-muted-gray/50 text-sm italic font-normal">Today</span>
+</div>
+<div class="bg-card-dark/40 rounded-xl p-4 flex items-center justify-between border-l-4 border-success-teal">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-success-teal/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-success-teal">check_circle</span>
+</div>
+<div>
+<h3 class="text-white/60 text-base font-semibold line-through">Wash the car</h3>
+<p class="text-muted-gray/70 text-xs italic font-normal">Completed by Alex</p>
+</div>
+</div>
+<span class="text-muted-gray/50 text-sm italic font-normal">Yesterday</span>
+</div>
+</div>
+</section>
+</div>
+<div class="h-24"></div>
+</div>
+</main>
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 w-full max-w-md px-4 md:px-0">
+<nav class="bg-card-dark border border-white/10 shadow-2xl rounded-full px-6 py-3 flex items-center justify-between backdrop-blur-md">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined fill">home</span>
+<span class="text-[10px] font-extrabold uppercase tracking-wider">Home</span>
+</button>
+<button class="bg-primary w-14 h-14 rounded-full flex items-center justify-center -mt-10 border-[6px] border-background-dark shadow-xl hover:scale-105 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-black text-3xl font-extrabold">add</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-muted-gray hover:text-white transition-colors">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-extrabold uppercase tracking-wider">Profile</span>
+</button>
+</nav>
+</div>
+</div>
+
+</body></html>

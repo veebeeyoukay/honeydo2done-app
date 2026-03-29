@@ -1,0 +1,30 @@
+{
+    "screenshot": {
+        "name": "projects/6015041271196470309/files/491ad2bfb2854e86986f31be53264cd1",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uh-ZUlT8Pg7Qvk5USDsH49eqmlWRKvrICIxMQUBMZBQbI5B0ZYb4FMc7cSbRfgA00L91BlNdmWoi21Gzbgzo6P4AVkzhpcNtAsVAR0TLDlkTUQDILdYbG1GKpietED2EdYlo8NrjLcbrlEE9oFlGqEdTnt_mZIvpRVMtsJOk3i0nchahjsStoen2HwTzlFpvXl9tBkdN5uJzbV5sgBkzV-8ZgGjkTVL1ziATJHHOCmTrwEtP1hxq6aOfCA"
+    },
+    "htmlCode": {
+        "name": "projects/6015041271196470309/files/8461ba9647cf4e08a9caf1acb312fc99",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2I5NTVmZWIyMWE0MjRhNzNiOGM5M2Q4Njg5NTI5ODY5EgsSBxCA3cuCnB8YAZIBIwoKcHJvamVjdF9pZBIVQhM2MDE1MDQxMjcxMTk2NDcwMzA5&filename=&opi=89354086"
+    },
+    "id": "3aad6874890a47c0bebc448fb0345a3f",
+    "generatedBy": "figaro_agent",
+    "width": "2560",
+    "height": "2048",
+    "title": "Add New Task Screen",
+    "prompt": "Title: Add New Task Screen\nContext: Household task management app for couples called HoneyDo2Done with a modern, dark-themed aesthetic.\nDescription of the screen: The 'Add Task' screen for HoneyDo2Done. It features a full-height bottom drawer or a clean modal overlay against the deep charcoal background. Large, friendly input field for 'What needs doing?'. Below, quick-select buttons for 'Urgency' (using Coral Red for high), 'Area' (Kitchen, Garden, etc.), and 'Assign to Partner'. The UI is very minimal with rounded corners and warm honey gold accents for the primary action button. The typography is clean sans-serif. It feels effortless and satisfying to use.\nPlatform: web\nForm factor: desktop",
+    "name": "projects/6015041271196470309/screens/3aad6874890a47c0bebc448fb0345a3f",
+    "theme": {
+        "colorMode": "DARK",
+        "font": "INTER",
+        "roundness": "ROUND_EIGHT",
+        "customColor": "#f5a524",
+        "saturation": 3
+    },
+    "deviceType": "DESKTOP",
+    "screenType": "DESIGN",
+    "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+    }
+}

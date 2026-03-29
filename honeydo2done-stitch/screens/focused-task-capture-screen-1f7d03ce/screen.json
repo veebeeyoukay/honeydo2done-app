@@ -1,0 +1,30 @@
+{
+    "screenshot": {
+        "name": "projects/6015041271196470309/files/59e5eea16d6648458fa2ed1d515b2416",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ugy0EHZ-WzRjFJSHMiFEUS5ry0m9D2U5icDrKR2U5tC3wJnTbueFxLiWZbLNFOVkE8JQc4hLTEqyIC39TRo7AcSgAQcgC2T0gxxk_ZpQdjFUVqQWbZX7ky83vrqYJHNSxm098IO3hMsN8ob9syRkmjhs2ciKhu9bRT6PxlTGCpooTlMsetHqAU8UzMMPd2Ik2VA3Pmw_BFIbP_IJqZJZ1wy78FB9g0C6E4SAzx8WEv4M8vMgSE54Ql2-pE"
+    },
+    "htmlCode": {
+        "name": "projects/6015041271196470309/files/de18a8cfc4774c94a15021d761c3bcee",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2E3MDNjNjIwOTQ2YTRjOWM4OGVjOWViYTZlNmYzN2RiEgsSBxCA3cuCnB8YAZIBIwoKcHJvamVjdF9pZBIVQhM2MDE1MDQxMjcxMTk2NDcwMzA5&filename=&opi=89354086"
+    },
+    "id": "1f7d03ced3c346bfa8285bcbdd393d90",
+    "generatedBy": "edit_agent",
+    "width": "2560",
+    "height": "2048",
+    "title": "Focused Task Capture Screen",
+    "prompt": "Title: Accessible Task Capture Screen\nContext: Task capture screen for HoneyDo2Done, a household management app, designed for focused and therapeutic task delegation.\nEdit request: Audit the voice capture screen for accessibility. The microphone, camera, and keyboard buttons must all meet the 44px minimum tap target size. Ensure high contrast for the 'What's going on?' title and all placeholder text against the dark background.\nPlatform: web\nForm factor: desktop",
+    "name": "projects/6015041271196470309/screens/1f7d03ced3c346bfa8285bcbdd393d90",
+    "theme": {
+        "colorMode": "DARK",
+        "font": "INTER",
+        "roundness": "ROUND_FULL",
+        "customColor": "#f5a524",
+        "saturation": 3
+    },
+    "deviceType": "DESKTOP",
+    "screenType": "DESIGN",
+    "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+    }
+}

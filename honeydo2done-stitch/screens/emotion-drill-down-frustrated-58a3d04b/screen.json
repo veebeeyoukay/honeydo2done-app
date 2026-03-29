@@ -1,0 +1,30 @@
+{
+    "screenshot": {
+        "name": "projects/6015041271196470309/files/2b835c68594d41a1adbf35a91c618e86",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ujpgKZ6ZtES4DjamCq0l25uECWJtI5IrfD363qOiu-Qp7825piehH1Mw5sHWy8JnX5AFCfdOcp1h85SAgzi8YANk7jV9brFI99kRHz5ah94GRyIqT878cnhbzQ6oMd2jjhGhS2l4oahNPCFF1roadbxUQki5zTbvTVyqcNnPX-tBKjBcY0pNk_Jov2Q3D0X4Z0upn2DXceUUOEdP48AlAmUURoXcWe6ceURIz5xlQ2GcpkZyBHfRY4mcQ"
+    },
+    "htmlCode": {
+        "name": "projects/6015041271196470309/files/2cfc94f31b0545ca992f0ee4f36a1a30",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzlhODQ5Yjg1MWE4ZjQ1NDc5ZTYzNzcyZDJlNzMxODg2EgsSBxCA3cuCnB8YAZIBIwoKcHJvamVjdF9pZBIVQhM2MDE1MDQxMjcxMTk2NDcwMzA5&filename=&opi=89354086"
+    },
+    "id": "58a3d04bb0fe44f1b47085e7ae631bf4",
+    "generatedBy": "edit_agent",
+    "width": "2560",
+    "height": "2048",
+    "title": "Emotion Drill-down: Frustrated",
+    "prompt": "Title: Tactile Emotion Drill-down\nContext: Emotion drill-down screen for HoneyDo2Done, specifically for the 'High Energy Unpleasant' state, focusing on granular emotional expression.\nEdit request: Add depth to the emotion constellation. Words should have a very soft drop shadow, making them appear to float at different depths. The floating definition card at the bottom should have a subtle border glow and a soft shadow to separate it from the background layer. The arrow button should have a 'glossy' gradient finish.\nPlatform: web\nForm factor: desktop",
+    "name": "projects/6015041271196470309/screens/58a3d04bb0fe44f1b47085e7ae631bf4",
+    "theme": {
+        "colorMode": "DARK",
+        "font": "INTER",
+        "roundness": "ROUND_TWELVE",
+        "customColor": "#f4ab25",
+        "saturation": 3
+    },
+    "deviceType": "DESKTOP",
+    "screenType": "DESIGN",
+    "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+    }
+}

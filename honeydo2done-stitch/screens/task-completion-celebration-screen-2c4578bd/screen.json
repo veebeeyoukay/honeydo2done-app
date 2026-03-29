@@ -1,0 +1,30 @@
+{
+    "screenshot": {
+        "name": "projects/6015041271196470309/files/3746c6330e5b41c8862af13516cbb495",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ui0DOOmtTL3nao1UwRg95B_MV38xmNikJuuLDDV43733ckrvDDfPReOqDBvGCnwYp5rf_zDOZXGf2KlebHglm0ORxXNG-NK7kueBKT-aR6nueHHkDNK-M1PvsjZ2Cuj6X4Xh_iH6r1-ViPf-HN0DZ_TdAo4KU4mq2IQYRdfCioOhDMLWyTZU-ojoaAozMgANce89j_wSoWJ4pk-LsQp8uEfpQF724jcGW-oHSJ5J8AhBaMWPYOKpl2wIZA"
+    },
+    "htmlCode": {
+        "name": "projects/6015041271196470309/files/10277401072a48d4badc284a47055766",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzcxYjhkYTUyODM5MzQzMzdhNDNkZmFmMjM3NjA5YzU3EgsSBxCA3cuCnB8YAZIBIwoKcHJvamVjdF9pZBIVQhM2MDE1MDQxMjcxMTk2NDcwMzA5&filename=&opi=89354086"
+    },
+    "id": "2c4578bd691547f8a93d0aa6ca75f1d7",
+    "generatedBy": "edit_agent",
+    "width": "2560",
+    "height": "2068",
+    "title": "Task Completion Celebration Screen",
+    "prompt": "Title: Spacious Task Completion Screen\nContext: Task completion screen for the 'Doer' (fixer) in the HoneyDo2Done app, designed to provide a sense of achievement and closure.\nEdit request: Increase internal padding of the task summary card and the note input field area to 16px. Increase vertical spacing between all stacked elements\u2014title, card, input area, and buttons\u2014to at least 12px.\nPlatform: web\nForm factor: desktop",
+    "name": "projects/6015041271196470309/screens/2c4578bd691547f8a93d0aa6ca75f1d7",
+    "theme": {
+        "colorMode": "DARK",
+        "font": "INTER",
+        "roundness": "ROUND_TWELVE",
+        "customColor": "#f5a524",
+        "saturation": 3
+    },
+    "deviceType": "DESKTOP",
+    "screenType": "DESIGN",
+    "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+    }
+}

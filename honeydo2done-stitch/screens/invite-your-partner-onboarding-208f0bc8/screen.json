@@ -1,0 +1,30 @@
+{
+    "screenshot": {
+        "name": "projects/6015041271196470309/files/aa199bcdceaa4321af8dfeecde8840a7",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0ujAlw0S9YQiY15E5TSx44D1sA6v2SurUfJZj12XqZowKnameQqvPRurkfIRjDhUuqbwC4c_ejwOB_JnS2ih1409ODQDdEHdWmJV0aV5IitnM0PDgiYhNkbbrG-PZanElxWqfLj-Lr0jVXY-tKwc9sChp97NMWYaC8Sy-07b4H6_J-SELYRzSoY0UyDxmZ_ncliRS6tDC7Nq-eh_U_3emt-bQU10oSDOQWgvtYxmSulJW08Qu58zYgTRtsA"
+    },
+    "htmlCode": {
+        "name": "projects/6015041271196470309/files/b65a62afeb354e3cb32ef17c6b9c7392",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2VhOGJjM2QwNjgyNzQxMzk5OTRlN2EyYjExNjIzZDlhEgsSBxCA3cuCnB8YAZIBIwoKcHJvamVjdF9pZBIVQhM2MDE1MDQxMjcxMTk2NDcwMzA5&filename=&opi=89354086"
+    },
+    "id": "208f0bc8db0e4817b756133816a67946",
+    "generatedBy": "figaro_agent",
+    "width": "2560",
+    "height": "2048",
+    "title": "Invite Your Partner Onboarding",
+    "prompt": "Title: Invite Your Partner Onboarding\nContext: Onboarding partner invitation screen for 'Honey' in the HoneyDo2Done app, designed to feel supportive and welcoming.\nDescription of the screen: A warm and welcoming invitation screen on a deep charcoal black (#0D0D0D) background. At the top, the header 'Who does your honey-do list go to?' in clean white. Below the header, an abstract illustration of two overlapping soft-glowing circles in honey gold and teal, representing a supportive partnership. Centered on the screen are two sleek text input fields for 'Their name' and 'Their email' with subtle borders and dark gray backgrounds. A prominent 'Send invite' button in warm honey gold (#F5A623) sits below the inputs. At the very bottom, a muted 'Skip for now' link with the helpful subtext 'You can always add someone later'. The layout is spacious, friendly, and focuses on the relief of sharing the load.\nPlatform: web\nForm factor: desktop",
+    "name": "projects/6015041271196470309/screens/208f0bc8db0e4817b756133816a67946",
+    "theme": {
+        "colorMode": "DARK",
+        "font": "INTER",
+        "roundness": "ROUND_TWELVE",
+        "customColor": "#f5a524",
+        "saturation": 3
+    },
+    "deviceType": "DESKTOP",
+    "screenType": "DESIGN",
+    "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+    }
+}

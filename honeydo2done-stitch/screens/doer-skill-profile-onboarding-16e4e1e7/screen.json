@@ -1,0 +1,30 @@
+{
+    "screenshot": {
+        "name": "projects/6015041271196470309/files/a1745efb21bc4f44bd2b246f3c74e92b",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uiDLvZ6Iv31MN_t5cY2SwFAS45baicquMNtnXL0pzeTwi0eaYPvILQYjkaDb4hLMFp7mSWZWyR3eNOgsMTnXZg0quSUkuCUgLT0N2C5iY8ZoPkAGcvWcIRhn2wxMt1y_aX0PQKhH4FU5MeVyxM6jtXD2_DcA1Vq_zwiF2LxUkz_Hx8Ll8ErWbwn4vIdjJ9XBrIt7E0XNJyZN-4DLFaERNiYIAda0P0_at0oX-ZKehCGIFpnP0g6adHX_Zw"
+    },
+    "htmlCode": {
+        "name": "projects/6015041271196470309/files/b3d201e89b1c4de1addf74bafb43892b",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2NkMzcxNDQwYTBiNTQwZGRhYzI1MzUyNjFmZjlhNDFmEgsSBxCA3cuCnB8YAZIBIwoKcHJvamVjdF9pZBIVQhM2MDE1MDQxMjcxMTk2NDcwMzA5&filename=&opi=89354086"
+    },
+    "id": "16e4e1e7da594ac5bdeda93c8b453ba8",
+    "generatedBy": "figaro_agent",
+    "width": "2560",
+    "height": "2048",
+    "title": "Doer Skill Profile Onboarding",
+    "prompt": "Title: Doer Skill Profile Onboarding\nContext: Onboarding skill profile screen for the 'Doer' in the HoneyDo2Done app, focusing on self-reported expertise in household tasks.\nDescription of the screen: A professional and encouraging onboarding screen with a deep charcoal black (#0D0D0D) background. Title 'What are you comfortable with?' in bold white at the top, followed by the subtitle 'This helps us route the right tasks to you' in muted gray. The core is a 2-column grid of six skill cards: Plumbing, Electrical, Smart Home, Outdoor, Appliances, and General Repairs. Each card (#1A1A1A, 12px rounded corners) features a central icon and a 4-level comfort indicator using dots or a segmented bar (Not me, Maybe with help, I've got this, Expert). Tapping a card cycles through these levels, with the active level highlighted in honey gold (#F5A623). At the bottom, a prominent 'Continue' button in honey gold. The design feels like building a toolkit of pride and capability.\nPlatform: web\nForm factor: desktop",
+    "name": "projects/6015041271196470309/screens/16e4e1e7da594ac5bdeda93c8b453ba8",
+    "theme": {
+        "colorMode": "DARK",
+        "font": "INTER",
+        "roundness": "ROUND_TWELVE",
+        "customColor": "#f5a524",
+        "saturation": 3
+    },
+    "deviceType": "DESKTOP",
+    "screenType": "DESIGN",
+    "screenMetadata": {
+        "agentType": "PRO_AGENT",
+        "status": "COMPLETE"
+    }
+}
